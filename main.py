@@ -12,7 +12,7 @@ img = ImageTk.PhotoImage(Image.open('forest1.jpeg'))
 
 # creating class for button 'HELP':
 class hel:
-    help = Frame(w, width=400, height=400)
+    help = Frame(w, width=800, height=600)
     help.place(anchor='center', relx=0.5, rely=0.5)
     w.title('HELP')
 
@@ -33,7 +33,7 @@ class hel:
 
 # creating class for button 'ABOUT':
 class ab:
-    about = Frame(w, width=400, height=400)
+    about = Frame(w, width=800, height=600)
     about.place(anchor='center', relx=0.5, rely=0.5)
     w.title('ABOUT')
 
@@ -54,7 +54,7 @@ class ab:
 
 
 class st:
-    start = Frame(w, width=400, height=400)
+    start = Frame(w, width=800, height=600)
     start.place(anchor='center', relx=0.5, rely=0.5)
     w.title('START')
 
