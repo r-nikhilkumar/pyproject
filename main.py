@@ -1,5 +1,7 @@
+#Packages imported
 from tkinter import *
 from PIL import ImageTk, Image
+
 
 
 # initializing window:
