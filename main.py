@@ -6,12 +6,8 @@ from PIL import ImageTk, Image
 
 # initializing window:
 w = Tk()
-
-screen_width = w.winfo_screenwidth()
-screen_height = w.winfo_screenheight()
-a=str(screen_width)+'x'+str(screen_height)
-w.geometry(a)
-w.maxsize(screen_width,screen_height)
+w.geometry("800x600")
+w.maxsize(800,600)
 img = ImageTk.PhotoImage(Image.open('forest1.jpeg'))
 
 # creating class for button 'HELP':
