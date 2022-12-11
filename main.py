@@ -2,7 +2,8 @@
 import random
 from tkinter import *
 from PIL import ImageTk, Image
-# last commit
+
+# declaring word list:
 
 ls = ['APPLE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS', 'ACCOUNT', 'ACID', 'ACROSS', 'ACT',
       'ACTOR', 'ACTUAL', 'ADAPT', 'ADJUST', 'ADMIT', 'ADOPT', 'AFTER', 'AFFORD', 'AGAIN', 'AGE', 'AGENT', 'AGREE', 'AHEAD',
