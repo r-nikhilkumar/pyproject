@@ -167,7 +167,7 @@ class st:
 
     def hintt():
         
-        tx = Label(st.start, text=txt, font=(
+        tx = Label(st.start, text="hint", font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
         
@@ -191,7 +191,7 @@ class st:
     #     wrd = choice()
     # print(wrd)
     # i-=1
-    hint = Button(start, text="❓", command=refreshfun)
+    hint = Button(start, text="❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
 
