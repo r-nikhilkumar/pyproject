@@ -174,8 +174,8 @@ class st:
         hint.append(" *"*((len(wrd)-1)-y))
         txt = "".join(hint)
         tx = Label(st.start, text=txt, font=(
-            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
-        tx.place(anchor='w', relx=0.45, rely=0.48)
+            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
+        tx.place(anchor='w', relx=0.57, rely=0.41)
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
