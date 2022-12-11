@@ -29,7 +29,6 @@ if wrd in ls:
 
 
 def jumble(w):
-    # ls = []
     run = True
     word = ""
     ls = list(w)
