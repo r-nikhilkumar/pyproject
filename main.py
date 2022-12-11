@@ -59,8 +59,6 @@ def choice():
 
 # def getWord():
 wrd = choice()
-if wrd in ls:
-    wrd = choice()
 
 
 def jumble(w):
@@ -69,7 +67,9 @@ def jumble(w):
     ls = list(w)
     word = word.join(random.sample(w, len(w)))
     return word
-
+word = jumble(wrd)
+while word in ls:
+    word = jumble(wrd)
 
 # initializing window:
 w = Tk()
@@ -184,7 +184,7 @@ class st:
     txt1.place(anchor='center', relx=0.3, rely=0.35)
     i = 2
     # while i>0:
-    stText = Label(start, text=f' {jumble(wrd)} ', font=(
+    stText = Label(start, text=f' {word} ', font=(
         "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     stText.place(anchor='w', relx=0.45, rely=0.26)
     inputtxt = Text(start, height=1, width=16)
