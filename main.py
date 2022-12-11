@@ -182,9 +182,10 @@ class st:
         inputtxt.place(anchor='w', relx=0.45, rely=0.35)
         Submit = Button(start, text="SUBMIT", command=printInput)
         Submit.place(anchor='w', relx=0.45, rely=0.41)
-        # wrd = choice()
-        # if wrd in ls:
-        #     wrd = choice()
+        wrd = choice()
+        if wrd in ls:
+            wrd = choice()
+        # print(wrd)
         i-=1
     # refresh = Button(start, text="REFRESH", command=refreshfun)
     # refresh.place(anchor='w', relx=0.53, rely=0.41)
