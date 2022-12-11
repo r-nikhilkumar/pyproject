@@ -125,6 +125,7 @@ class ab:
         home.pack_forget()
         ab.about.pack()
 
+# creating class for button 'START':
 
 class st:
     # w.title('START')
@@ -200,8 +201,7 @@ class st:
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
 
-# defining frame 1:
-
+# defining HOME frame {main}:
 
 home = Frame(w, width=800, height=600)
 home.place(anchor='center', relx=0.5, rely=0.5)
