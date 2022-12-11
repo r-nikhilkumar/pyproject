@@ -5,5 +5,6 @@ Team Members:
 Anshika Saxena,
 Manasvi Gaur,
 Nikhil Kumar,
+Himanshu Bisht,
 Shivam Kumar Pathak,
-Himanshu Bisht
+Ratan Priyanshu
