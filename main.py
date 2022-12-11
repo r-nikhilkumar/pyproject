@@ -14,7 +14,7 @@ ls = ['APPLE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS'
       'BLAME', 'BLANKET', 'BLIND', 'BLOCK', 'BOARD', 'BOAT', 'BODY', 'BOOK', 'BORDER', 'BORROW', 'BOTHER', 'BOTTLE', 'BOTTOM',
       'BRAIN', 'BREATH', 'BUDGET', 'BUILD', 'BULLET', 'BUSY', 'BUTTON', 'BOYFRIEND', 'BUTTER', 'CABIN', 'CABLE', 'CAKE', 'CALCULATE',
       'CAMERA', 'CAMPUS', 'CANCER', 'CANDIDATE', 'CAPABILITY', 'CAPTAIN', 'CAR', 'CARBON', 'CARD', 'CARRER', 'CAREFUL', 'CARRY',
-      'CAT', 'CATCH', 'CAUSE', 'CEILING', 'CELEBRITY', 'CENTER', 'CHAIN', 'CHAIR', 'CHALLENGE', 'CHAMBER', 'CHANGE', 'CHARITY', 
+      'CAT', 'CATCH', 'CAUSE', 'CEILING', 'CELEBRITY', 'CENTER', 'CHAIN', 'CHAIR', 'CHALLENGE', 'CHAMBER', 'CHANGE', 'CHARITY',
       'CHEAP', 'CHECK', 'CHILD', 'CHIP', 'CIRCLE', 'CITY', 'CLAIM', 'DOOR', 'DATE', 'DRINK', 'DINOSAUR', 'DEER', 'DESK', 'DONKEY',
       'DEEP', 'DANCE', 'DUCK', 'DIP', 'DAB', 'DEN', 'DAD', 'DENT', 'DOCK', 'DARK', 'DUST', 'DOWN', 'EGG', 'ELEPHANT', 'ENTER',
       'ENVELOPE', 'EXIT', 'ELEVATOR', 'END', 'ECHO', 'ENGINE', 'EMPTY', 'EAT', 'EAGLE', 'EACH', 'EASY', 'EMAIL', 'EAR', 'EAST',
@@ -39,22 +39,23 @@ ls = ['APPLE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS'
       'PAY', 'PEACE', 'PEN', 'PENCIL', 'PEOPLE', 'PEPPER', 'PER', 'PERFECT', 'PERIOD', 'PERSON', 'PETROL', 'PHOTOGRAPH', 'PIANO',
       'PICK', 'PICTURE', 'PIECE', 'PIG', 'PIN', 'PINK', 'PLACE', 'PLANE', 'PLANT', 'PLASTIC', 'PLATE', 'PLAY', 'PLEASE', 'PLEASED',
       'PLENTY', 'POCKET', 'POINT', 'POISON', 'POLICE', 'POLITE', 'POOL', 'POOR', 'POPULAR', 'POSITION', 'POSSIBLE', 'QUEEN', 'QUESTION',
-      'QUICK', 'QUIET', 'QUITE', 'RADIO', 'RAIN', 'RAINY', 'RAISE', 'REACH', 'READ', 'READY', 'REAL', 'REALLY', 'RECEIVE', 'RECORD', 
-      'REMEMBER', 'REMIND', 'REMOVE', 'RENT', 'REPAIR', 'REPEAT', 'REPLY', 'REPORT', 'REST', 'SAD', 'SAFE', 'SAIL', 'SALT', 'SAME', 
+      'QUICK', 'QUIET', 'QUITE', 'RADIO', 'RAIN', 'RAINY', 'RAISE', 'REACH', 'READ', 'READY', 'REAL', 'REALLY', 'RECEIVE', 'RECORD',
+      'REMEMBER', 'REMIND', 'REMOVE', 'RENT', 'REPAIR', 'REPEAT', 'REPLY', 'REPORT', 'REST', 'SAD', 'SAFE', 'SAIL', 'SALT', 'SAME',
       'SAVE', 'SAY', 'SCHOOL', 'SCIENCE', 'SCISSORS', 'SEARCH', 'SEAT', 'SECOND', 'SEE', 'SEEM', 'SELL', 'SEND', 'SENTENCE', 'SERVE',
       'SEVEN', 'SEVERAL', 'SHADE', 'SHADOW', 'SHAKE', 'SHAPE', 'SHARE', 'SHARP', 'SHE', 'SHEEP', 'SHEET', 'SHELF', 'SHINE', 'SHIP',
       'SHIRT', 'SHOE', 'SHOOT', 'SHOP', 'SHORT', 'SHOULD', 'SHOULDER', 'SHOUT', 'SHOW', 'SICK', 'SIDE', 'SIGNAL', 'SILENCE', 'SILLY',
-      'SILVER', 'SIMILAR', 'SIMPLE', 'SINGLE', 'SINCE', 'SING', 'TABLE', 'TAKE', 'TALK', 'TALL', 'TASTE', 'TAXI', 'TEA', 'TEACH', 
+      'SILVER', 'SIMILAR', 'SIMPLE', 'SINGLE', 'SINCE', 'SING', 'TABLE', 'TAKE', 'TALK', 'TALL', 'TASTE', 'TAXI', 'TEA', 'TEACH',
       'TEAR', 'TELEPHONE', 'TELEVISION', 'TELL', 'TEN', 'TENNIS', 'TERRIBLE', 'TEST', 'THAN', 'THAT', 'THE', 'THEIR', 'THEN', 'THERE',
-      'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'UP', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY', 
+      'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'UP', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY',
       'VOICE', 'VISIT', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WASTE', 'WATCH', 'WATER', 'WAY', 'WE', 'WEAK', 'WEAR',
-      'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL', 
+      'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL',
       'YET', 'YOU', 'YOUNG', 'YOUR', 'ZERO', 'ZOO', "SHIVAM", "MANASVI", "NIKHIL", "HIMANSHU", "RATAN", "ANSHIKA"]
 
 
 def choice():
     x = random.choice(ls)
     return x
+
 
 # def getWord():
 wrd = choice()
@@ -66,7 +67,7 @@ def jumble(w):
     run = True
     word = ""
     ls = list(w)
-    word = word.join(random.sample(w,len(w)))
+    word = word.join(random.sample(w, len(w)))
     return word
 
 
@@ -139,7 +140,7 @@ class st:
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
-        st.inputtxt.delete('1.0','end')
+        st.inputtxt.delete('1.0', 'end')
 
     start = Frame(w, width=800, height=600)
     label4 = Label(start, image=img)
@@ -163,33 +164,36 @@ class st:
     def homeToStart():
         home.pack_forget()
         st.start.pack()
-    def refreshfun():
-        st.start.destroy()
-        st.start.pack()
-    i = 2
-    while i>0:
-        jum = Label(start, text='The Jumbled Word is:', font=(
-            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-        jum.place(anchor='center', relx=0.3, rely=0.26)
-        txt1 = Label(start, text='Enter your guess:', font=(
-            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-        txt1.place(anchor='center', relx=0.3, rely=0.35)
 
-        stText = Label(start, text=f' {jumble(wrd)} ', font=(
-            "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-        stText.place(anchor='w', relx=0.45, rely=0.26)
-        inputtxt = Text(start, height=1, width=16)
-        inputtxt.place(anchor='w', relx=0.45, rely=0.35)
-        Submit = Button(start, text="SUBMIT", command=printInput)
-        Submit.place(anchor='w', relx=0.45, rely=0.41)
-        wrd = choice()
-        if wrd in ls:
-            wrd = choice()
-        # print(wrd)
-        i-=1
-    # refresh = Button(start, text="REFRESH", command=refreshfun)
-    # refresh.place(anchor='w', relx=0.53, rely=0.41)
-    
+    def hintt():
+        
+        tx = Label(st.start, text=txt, font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
+        tx.place(anchor='w', relx=0.45, rely=0.48)
+        
+    jum = Label(start, text='The Jumbled Word is:', font=(
+        "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+    jum.place(anchor='center', relx=0.3, rely=0.26)
+    txt1 = Label(start, text='Enter your guess:', font=(
+        "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+    txt1.place(anchor='center', relx=0.3, rely=0.35)
+    i = 2
+    # while i>0:
+    stText = Label(start, text=f' {jumble(wrd)} ', font=(
+        "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+    stText.place(anchor='w', relx=0.45, rely=0.26)
+    inputtxt = Text(start, height=1, width=16)
+    inputtxt.place(anchor='w', relx=0.45, rely=0.35)
+    Submit = Button(start, text="SUBMIT", command=printInput)
+    Submit.place(anchor='w', relx=0.45, rely=0.41)
+    # wrd = choice()
+    # if wrd in ls:
+    #     wrd = choice()
+    # print(wrd)
+    # i-=1
+    hint = Button(start, text="❓", command=refreshfun)
+    hint.place(anchor='w', relx=0.53, rely=0.41)
+
 
 # defining frame 1:
 
