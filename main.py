@@ -5,7 +5,7 @@ from PIL import ImageTk, Image
 
 # declaring word list:
 
-ls = ['APPLE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS', 'ACCOUNT', 'ACID', 'ACROSS', 'ACT',
+ls = ['APPLE', 'PHASE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS', 'ACCOUNT', 'ACID', 'ACROSS', 'ACT',
       'ACTOR', 'ACTUAL', 'ADAPT', 'ADJUST', 'ADMIT', 'ADOPT', 'AFTER', 'AFFORD', 'AGAIN', 'AGE', 'AGENT', 'AGREE', 'AHEAD',
       'AIM', 'ALIVE', 'ALLOW', 'ALMOST', 'ALONE', 'LONG', 'ALSO', 'ALWAYS', 'AMONG', 'AMOUNT', 'ANALYZE', 'ANGLE', 'ANIMAL',
       'ANSWER', 'ANY', 'APART', 'APPEAL', 'APPEAR', 'APPLY', 'AREA', 'ARGUE', 'ARISE', 'AROUND', 'ARRANGE', 'ARREST',
@@ -136,9 +136,9 @@ class st:
         # Label.config(text =inp)
 
         if inp.upper() in ls:
-            txt = 'You Guessed right!'
+            txt = ' Guessed right! '
         else:
-            txt = 'Wrong Guess!'
+            txt = ' Wrong Guess! '
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
