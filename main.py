@@ -46,15 +46,9 @@ ls = ['APPLE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS'
       'SHIRT', 'SHOE', 'SHOOT', 'SHOP', 'SHORT', 'SHOULD', 'SHOULDER', 'SHOUT', 'SHOW', 'SICK', 'SIDE', 'SIGNAL', 'SILENCE', 'SILLY',
       'SILVER', 'SIMILAR', 'SIMPLE', 'SINGLE', 'SINCE', 'SING', 'TABLE', 'TAKE', 'TALK', 'TALL', 'TASTE', 'TAXI', 'TEA', 'TEACH',
       'TEAR', 'TELEPHONE', 'TELEVISION', 'TELL', 'TEN', 'TENNIS', 'TERRIBLE', 'TEST', 'THAN', 'THAT', 'THE', 'THEIR', 'THEN', 'THERE',
-<<<<<<< HEAD
       'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'UP', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY',
       'VOICE', 'VISIT', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WASTE', 'WATCH', 'WATER', 'WAY', 'WE', 'WEAK', 'WEAR',
       'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL',
-=======
-      'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY', 
-      'VOICE', 'VISIT', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WASTE', 'WATCH', 'WATER', 'WAY', 'WEAK', 'WEAR',
-      'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL', 
->>>>>>> 019b3ccf9af37342aec26516bab061c0fab84eee
       'YET', 'YOU', 'YOUNG', 'YOUR', 'ZERO', 'ZOO', "SHIVAM", "MANASVI", "NIKHIL", "HIMANSHU", "RATAN", "ANSHIKA"]
 
 
@@ -172,8 +166,13 @@ class st:
         st.start.pack()
 
     def hintt():
-        
-        tx = Label(st.start, text="hint", font=(
+        hint = []
+        y = random.randint(0, len(wrd)-1)
+        hint.append("* "*(y))
+        hint.append(wrd[y])
+        hint.append(" *"*((len(wrd)-1)-y))
+        txt = "".join(hint)
+        tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
         
