@@ -175,7 +175,7 @@ class st:
         txt = "".join(hint)
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
-        tx.place(anchor='w', relx=0.57, rely=0.41)
+        tx.place(anchor='w', relx=0.607, rely=0.41)
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -197,7 +197,7 @@ class st:
     #     wrd = choice()
     # print(wrd)
     # i-=1
-    hint = Button(start, text="❓", command=hintt)
+    hint = Button(start, text="HINT❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
 
