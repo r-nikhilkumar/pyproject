@@ -6,6 +6,20 @@ def go():
     frame1.pack_forget()
     frame2.pack()
 
+# while run:
+    #     while True:
+    #         x = random.randint(0, len(w)-1)
+    #         if x not in ls:
+    #             ls.append(x)
+    #         if len(ls) == len(w):
+    #             break
+
+    #     word = ""
+    #     for i in ls:
+    #         word += w[i]+" "
+    #     if word != w:
+    #         run = False
+    # # print(ls)
 
 
 img = ImageTk.PhotoImage(Image.open('forest1.jpeg'))

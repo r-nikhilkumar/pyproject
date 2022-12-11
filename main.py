@@ -22,30 +22,18 @@ def choice():
     x = random.choice(ls)
     return x
 
-
+# def getWord():
 wrd = choice()
 if wrd in ls:
     wrd = choice()
 
 
 def jumble(w):
-    ls = []
+    # ls = []
     run = True
     word = ""
-    while run:
-        while True:
-            x = random.randint(0, len(w)-1)
-            if x not in ls:
-                ls.append(x)
-            if len(ls) == len(w):
-                break
-
-        word = ""
-        for i in ls:
-            word += w[i]+" "
-        if word != w:
-            run = False
-    # print(ls)
+    ls = list(w)
+    word = word.join(random.sample(w,len(w)))
     return word
 
 
@@ -145,23 +133,28 @@ class st:
     def refreshfun():
         st.start.destroy()
         st.start.pack()
+    i = 2
+    while i>0:
+        jum = Label(start, text='The Jumbled Word is:', font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+        jum.place(anchor='center', relx=0.3, rely=0.26)
+        txt1 = Label(start, text='Enter your guess:', font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+        txt1.place(anchor='center', relx=0.3, rely=0.35)
 
-    jum = Label(start, text='The Jumbled Word is:', font=(
-        "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-    jum.place(anchor='center', relx=0.3, rely=0.26)
-    txt1 = Label(start, text='Enter your guess:', font=(
-        "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-    txt1.place(anchor='center', relx=0.3, rely=0.35)
-
-    stText = Label(start, text=f' {jumble(wrd)} ', font=(
-        "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
-    stText.place(anchor='w', relx=0.45, rely=0.26)
-    inputtxt = Text(start, height=1, width=16)
-    inputtxt.place(anchor='w', relx=0.45, rely=0.35)
-    Submit = Button(start, text="SUBMIT", command=printInput)
-    Submit.place(anchor='w', relx=0.45, rely=0.41)
-    refresh = Button(start, text="REFRESH", command=refreshfun)
-    refresh.place(anchor='w', relx=0.53, rely=0.41)
+        stText = Label(start, text=f' {jumble(wrd)} ', font=(
+            "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
+        stText.place(anchor='w', relx=0.45, rely=0.26)
+        inputtxt = Text(start, height=1, width=16)
+        inputtxt.place(anchor='w', relx=0.45, rely=0.35)
+        Submit = Button(start, text="SUBMIT", command=printInput)
+        Submit.place(anchor='w', relx=0.45, rely=0.41)
+        # wrd = choice()
+        # if wrd in ls:
+        #     wrd = choice()
+        i-=1
+    # refresh = Button(start, text="REFRESH", command=refreshfun)
+    # refresh.place(anchor='w', relx=0.53, rely=0.41)
     
 
 # defining frame 1:
