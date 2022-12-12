@@ -7,4 +7,6 @@ location=os.getcwd()+"\words.txt"
 
 #opening file
 fo=open(location,'r')
-print(fo.read())
+# print(fo.read())
+L=fo.read()
+print(L)

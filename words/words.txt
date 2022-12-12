@@ -1,31 +1,46 @@
-d=['door', 'date', 'drink', 'dinosaur', 'deer', 'desk', 'donkey', 'dart', 'deep', 'dance', 'duck', 'dip', 'dab', 'den', 'dad', 'dent', 'dock', 'dark', 'dust','down']
-e=['egg', 'elephant', 'enter', 'envelope', 'exit', 'elevator', 'end', 'echo', 'engine', 'empty','eat', 'eagle', 'each', 'easy', 'email', 'ear', 'east', 'equal', 'erase', 'even']
-f=['fall', 'friend', 'frog', 'farm', 'fence', 'field', 'feeling', 'fork', 'feet', 'fan', 'feed', 'fell', 'fear', 'far', 'face', 'family', 'fast', 'fat', 'fix', 'fire']
-g=['gate', 'gem', 'game', 'great', 'gobble', 'gun', 'gas', 'gap', 'give', 'gum', 'grapes', 'goose', 'geese', 'ghost', 'gym', 'green', 'grass', 'goat', 'guitar', 'gloves', 'general', 'generic', 'goat', 'glass', 'glacier']
-h=['hit', 'hot', 'hat', 'hump', 'hunger', 'hamper', 'hunt', 'hamburger', 'house', 'home', 'his', 'had', 'hope', 'hopeful', 'heal', 'heat', 'hill', 'hint', 'hop', 'hip', 'heel', 'hen']
-i=['ice', 'idea', 'important', 'increase', 'inside', 'into', 'introduce', 'invent', 'iron', 'invite', 'is', 'island', 'item']
-j=['Jacket', 'Jail', 'Jam', '', 'Jet', 'Jewel', 'Jingle', 'Jellybean', 'Joke', 'June', 'Joyful', 'July', 'Joll', 'Jetlag', 'Juggling', 'Jaguar', 'Journey', 'Jackpot', 'Jewelry', 'Just', 'Jellyfish', 'Junction']
-k=['kid', 'key', 'kind', 'koala', 'knit', 'kiwi', 'kick', 'King', 'kit', 'kitten', 'kangaroo', 
-'keyboard', 'kitchen', 'knife', 'knight', 'ketchup', 'Kennel', 'Kick', 'Knot', 'Knee', 'Kite', 
-'Knowledge', 'Knead', 'Keel', 'Knew', 'Keeper', 'Keep', 'Know']
-l=['ladder', 'lady', 'lamp', 'land', 'large', 'last', 'late', 'lately', 'laugh', 'lazy', 'lead', 'leaf', 'learn', 'leave', 'leg', 'left', 'lend', 'length', 'less', 'lesson', 'let', 'letter', 'library', 'lie', 'life', 'light', 'like', 'lion', 'lip', 'list', 'listen', 'little', 'live', 'lock', 'lonely', 'long', 'look', 'lose', 'lot', 'love', 'low', 'lower', 'luck']
-m=['machine', 'main', 'make', 'male', 'man', 'many', 'map', 'mark', 'market', 'marry', 'matter', 'may', 'me', 'meal', 'mean', 'measure', 'meat', 'medicine', 'meet', 'member', 'mention', 'method', 'middle', 'milk', 'million', 'mind', 'minute', 'miss', 'mistake', 'mix', 'model', 'modern', 'moment', 'money', 'monkey', 'month', 'moon', 'more', 'morning', 'most', 'mother', 'mountain', 'mouth', 'move', 'much', 'music', 'must', 'my']
-n=['name', 'narrow', 'nation', 'nature', 'near', 'nearly', 'neck', 'need', 'needle', 'neighbour', 'neither', 'net', 'never', 'new', 'news', 'newspaper', 'next', 'nice', 'night', 'nine', 'no', 'noble', 'noise', 'none', 'nor', 'north', 'nose', 'not', 'nothing', 'notice', 'now', 'number']
-o=['obey', 'object', 'ocean', 'of', 'off', 'offer', 'office', 'often', 'oil', 'old', 'on', 'one', 'only','open', 'opposite', 'or', 'orange', 'order', 'other', 'our', 'out', 'outside', 'over', 'own']
-p=['page', 'pain', 'paint', 'pair', 'pan', 'paper', 'parent', 'park', 'part', 'partner', 'party', 'pass', 'past', 'path', 'pay', 'peace', 'pen', 'pencil', 'people', 'pepper', 'per', 'perfect', 'period', 'person', 'petrol', 'photograph', 'piano', 'pick', 'picture', 'piece', 'pig', 'pin', 'pink', 'place', 'plane', 'plant', 'plastic', 'plate', 'play', 'please', 'pleased', 'plenty', 'pocket', 'point', 'poison', 'police', 
-'polite', 'pool', 'poor', 'popular', 'position', 'possible', 'potato', 'pour', 'power', 'present', 'press', 'pretty', 'prevent', 'price', 'prince', 'prison', 'private', 'prize', 'probably', 'problem', 'produce', 'promise', 'proper', 'protect', 'provide', 'public', 'pull', 'punish', 'pupil', 'push', 'put']
-q=['queen', 'question', 'quick', 'quiet', 'quite']
-r=['radio', 'rain', 'rainy', 'raise', 'reach', 'read', 'ready', 'real', 'really', 'receive', 'record', 'red', 'remember', 'remind', 'remove', 'rent', 'repair', 'repeat', 'reply', 'report', 'rest', 'restaurant', 'result', 'return', 'rice', 'rich', 'ride', 'right', 'ring', 'rise', 'road', 'rob', 'rock', 'room', 'round', 'rubber', 'rude', 'rule', 'ruler', 'run', 'rush']
-s=['sad', 'safe', 'sail', 'salt', 'same', 'sand', 'save', 'say', 'school', 'science', 'scissors', 'search', 'seat', 'second', 'see', 'seem', 'sell', 'send', 'sentence', 'serve', 'seven', 'several', 'shade', 'shadow', 'shake', 'shape', 'share', 'sharp', 'she', 'sheep', 'sheet', 'shelf', 'shine', 'ship', 'shirt', 'shoe', 'shoot', 'shop', 'short', 'should', 'shoulder', 'shout', 'show', 'sick', 'side', 'signal', 'silence', 'silly', 'silver', 'similar', 'simple', 'single', 'since', 'sing', 'sink', 'sister', 'sit', 'six', 'size', 'skill', 'skin', 'skirt', 'sky', 'sleep', 'slip', 'slow', 'small', 'smell', 'smile', 'smoke', 'snow', 'so', 'soap', 'sock', 'soft', 'some', 'someone', 'something', 'sometimes', 'son', 'soon', 'sorry', 'sound', 'soup', 'south', 'space', 'speak', 'special', 'speed', 'spell', 'spend', 'spoon', 'sport', 'spread', 
-'spring', 'square', 'stamp', 'stand', 'star', 'start', 'station', 'stay', 'steal', 'steam', 'step', 'still', 'stomach', 'stone', 'stop', 'store', 'storm', 'story', 'strange', 'street', 'strong', 'structure', 'student', 'study', 'stupid', 'subject', 'substance', 'successful', 'such', 'sudden', 'sugar', 'suitable', 
-'summer', 'sun', 'sunny', 'support', 'sure', 'surprise', 'sweet', 'swim', 'sword']
-t=['table', 'take', 'talk', 'tall', 'taste', 'taxi', 'tea', 'teach', 'team', 'tear', 'telephone', 'television', 'tell', 'ten', 'tennis', 'terrible', 'test', 'than', 'that', 'the', 'their', 'then', 'there', 'therefore', 'these', 'thick', 'thin', 'thing', 'think', 'third', 'this', 'though', 'threat', 'three', 'tidy', 'tie', 'title', 'to', 'today', 'toe', 'together', 'tomorrow', 'tonight', 'too', 'tool', 'tooth', 'top', 
-'total', 'touch', 'town', 'train', 'tram', 'travel', 'tree', 'trouble', 'true', 'trust', 'twice', 'try', 
-'turn', 'type']
-u=['ugly', 'uncle', 'under', 'understand', 'unit', 'until', 'up', 'use', 'useful', 'usual', 'usually']
-v=['vegetable', 'very', 'village', 'voice', 'visit']
-w=['wait', 'wake', 'walk', 'want', 'warm', 'was', 'wash', 'waste', 'watch', 'water', 'way', 'we', 'weak', 
-'wear', 'weather', 'wedding', 'week', 'weight', 'welcome', 'were', 'well', 'west', 'wet', 'what', 'wheel', 'when', 'where', 'which', 'while', 'white', 'who', 'why', 'wide', 'wife', 'wild', 'will', 'win', 'wind', 'window', 'wine', 'winter', 'wire', 'wise', 'wish', 'with', 'without', 'woman', 'wonder', 'word', 'work', 'world', 'worry']
-x=['xerox']
-y=['yard', 'yell', 'yesterday', 'yet', 'you', 'young', 'your']
-z=['zero', 'zoo']
+['APPLE', 'PHASE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE', 'ACCESS', 'ACCOUNT', 'ACID', 'ACROSS', 'ACT',
+      'ACTOR', 'ACTUAL', 'ADAPT', 'ADJUST', 'ADMIT', 'ADOPT', 'AFTER', 'AFFORD', 'AGAIN', 'AGE', 'AGENT', 'AGREE', 'AHEAD',
+      'AIM', 'ALIVE', 'ALLOW', 'ALMOST', 'ALONE', 'LONG', 'ALSO', 'ALWAYS', 'AMONG', 'AMOUNT', 'ANALYZE', 'ANGLE', 'ANIMAL',
+      'ANSWER', 'ANY', 'APART', 'APPEAL', 'APPEAR', 'APPLY', 'AREA', 'ARGUE', 'ARISE', 'AROUND', 'ARRANGE', 'ARREST',
+      'ART', 'AKS', 'ATTACK', 'AUTO', 'AVOID', 'AWARD', 'AWARE', 'AWAY', 'BABY', 'BACK', 'BAD', 'BAG', 'BAKE', 'BALANCE',
+      'BAN', 'BAND', 'BANK', 'BASE', 'BARRIER', 'BASIC', 'BASKET', 'BATTERY', 'BATTLE', 'BEACH', 'BEAR', 'BEAT', 'BECAUSE',
+      'BEFORE', 'BEGIN', 'BEHIND', 'BELIEF', 'BELONG', 'BELOW', 'BENEFIT', 'BEST', 'BIKE', 'BIND', 'BIRD', 'BIRTH', 'BLACK',
+      'BLAME', 'BLANKET', 'BLIND', 'BLOCK', 'BOARD', 'BOAT', 'BODY', 'BOOK', 'BORDER', 'BORROW', 'BOTHER', 'BOTTLE', 'BOTTOM',
+      'BRAIN', 'BREATH', 'BUDGET', 'BUILD', 'BULLET', 'BUSY', 'BUTTON', 'BOYFRIEND', 'BUTTER', 'CABIN', 'CABLE', 'CAKE', 'CALCULATE',
+      'CAMERA', 'CAMPUS', 'CANCER', 'CANDIDATE', 'CAPABILITY', 'CAPTAIN', 'CAR', 'CARBON', 'CARD', 'CARRER', 'CAREFUL', 'CARRY',
+      'CAT', 'CATCH', 'CAUSE', 'CEILING', 'CELEBRITY', 'CENTER', 'CHAIN', 'CHAIR', 'CHALLENGE', 'CHAMBER', 'CHANGE', 'CHARITY',
+      'CHEAP', 'CHECK', 'CHILD', 'CHIP', 'CIRCLE', 'CITY', 'CLAIM', 'DOOR', 'DATE', 'DRINK', 'DINOSAUR', 'DEER', 'DESK', 'DONKEY',
+      'DEEP', 'DANCE', 'DUCK', 'DIP', 'DAB', 'DEN', 'DAD', 'DENT', 'DOCK', 'DOG', 'DARK', 'DUST', 'DOWN', 'EGG', 'ELEPHANT', 'ENTER',
+      'ENVELOPE', 'EXIT', 'ELEVATOR', 'END', 'ECHO', 'ENGINE', 'EMPTY', 'EAT', 'EAGLE', 'EACH', 'EASY', 'EMAIL', 'EAR', 'EAST',
+      'EQUAL', 'ERASE', 'EVEN', 'FALL', 'FRIEND', 'FROG', 'FARM', 'FENCE', 'FIELD', 'FEELING', 'FORK', 'FEET', 'FAN', 'FEED',
+      'FELL', 'FEAR', 'FAR', 'FACE', 'FAMILY', 'FAST', 'FAT', 'FIX', 'FIRE', 'GATE', 'GEM', 'GAME', 'GOD','GREAT', 'GOBBLE', 'GUN',
+      'GAS', 'GAP', 'GIVE', 'GUM', 'GRAPES', 'GHOST', 'GYM', 'GREEN', 'GRASS', 'GOAT', 'GUITAR', 'GLOVES', 'GENERAL', 'GENERIC',
+      'GOAT', 'GLASS', 'GLACIER', 'HIT', 'HOT', 'HAT', 'HUMP', 'HUNGER', 'HAMPER', 'HUNT', 'HAMBURGER', 'HOUSE', 'HOME', 'HIS',
+      'HAD', 'HOPE', 'HOPEFUL', 'HEAL', 'HEAT', 'HILL', 'HINT', 'HOP', 'HIP', 'HEEL', 'HEN', 'ICE', 'IDEA', 'IMPORTANT', 'INCREASE',
+      'INSIDE', 'INTO', 'INTRODUCE', 'INVENT', 'IRON', 'INVITE', 'IS', 'ISLAND', 'ITEM', 'JACKET', 'JAIL', 'JEWEL',
+      'JINGLE', 'JELLYBEAN', 'JOKE', 'JUNE', 'JOYFUL', 'JULY', 'JOLL', 'JETLAG', 'JUGGLING', 'JAGUAR', 'JOURNEY', 'JACKPOT', 'JEWELRY',
+      'JUST', 'JELLYFISH', 'JUNCTION', 'KID', 'KEY', 'KIND', 'KOALA', 'KNIT', 'KIWI', 'KICK', 'KING', 'KITTEN', 'KANGAROO',
+      'KEYBOARD', 'KITCHEN', 'KNIFE', 'KNIGHT', 'KETCHUP', 'KENNEL', 'KICK', 'KNOT', 'KNEE', 'KITE', 'KNOWLEDGE', 'KNEAD', 'KEEL',
+      'KNEW', 'KEEPER', 'KEEP', 'KNOW', 'LADDER', 'LADY', 'LAMP', 'LAND', 'LARGE', 'LAST', 'LATE', 'LATELY', 'LAUGH', 'LAZY', 'LEAD',
+      'LEAF', 'LEARN', 'LEAVE', 'LEG', 'LEFT', 'LEND', 'LENGTH', 'LESS', 'LESSON', 'LET', 'LETTER', 'LIBRARY', 'LIE', 'LIFE', 'LIGHT',
+      'LIKE', 'LION', 'LIP', 'LIST', 'LISTEN', 'LITTLE', 'LIVE', 'LOCK', 'LONELY', 'LONG', 'LOOK', 'LOSE', 'LOT', 'LOVE', 'LOW',
+      'LOWER', 'LUCK', 'MACHINE', 'MAIN', 'MAKE', 'MALE', 'MAN', 'MANY', 'MAP', 'MARK', 'MARKET', 'MARRY', 'MATTER', 'MAY', 'ME',
+      'MEAL', 'MEAN', 'MEASURE', 'MEAT', 'MEDICINE', 'MEET', 'MEMBER', 'MENTION', 'METHOD', 'MIDDLE', 'MILK', 'MILLION', 'NAME',
+      'NARROW', 'NATION', 'NATURE', 'NEAR', 'NEARLY', 'NECK', 'NEED', 'NEEDLE', 'NEIGHBOUR', 'NEITHER', 'NET', 'NEVER', 'NEW',
+      'NEWS', 'NEWSPAPER', 'NEXT', 'NICE', 'NIGHT', 'OBEY', 'OBJECT', 'OCEAN', 'OFFER', 'OFFICE', 'OFTEN', 'OIL',
+      'OLD', 'ONE', 'ONLY', 'OPEN', 'OPPOSITE', 'OR', 'ORANGE', 'ORDER', 'OTHER', 'OUR', 'OUT', 'OUTSIDE', 'OVER', 'OWN',
+      'PAGE', 'PAIN', 'PAINT', 'PAIR', 'PAN', 'PAPER', 'PARENT', 'PARK', 'PART', 'PARTNER', 'PARTY', 'PASS', 'PAST', 'PATH',
+      'PAY', 'PEACE', 'PEN', 'PENCIL', 'PEOPLE', 'PEPPER', 'PER', 'PERFECT', 'PERIOD', 'PERSON', 'PETROL', 'PHOTOGRAPH', 'PIANO',
+      'PICK', 'PICTURE', 'PIECE', 'PIG', 'PIN', 'PINK', 'PLACE', 'PLANE', 'PLANT', 'PLASTIC', 'PLATE', 'PLAY', 'PLEASE', 'PLEASED',
+      'PLENTY', 'POCKET', 'POINT', 'POISON', 'POLICE', 'POLITE', 'POOL', 'POOR', 'POPULAR', 'POSITION', 'POSSIBLE', 'QUEEN', 'QUESTION',
+      'QUICK', 'QUIET', 'QUITE', 'RADIO', 'RAIN', 'RAINY', 'RAISE', 'REACH', 'READ', 'READY', 'REAL', 'REALLY', 'RECEIVE', 'RECORD',
+      'REMEMBER', 'REMIND', 'REMOVE', 'RENT', 'REPAIR', 'REPEAT', 'REPLY', 'REPORT', 'REST', 'SAD', 'SAFE', 'SAIL', 'SALT', 'SAME',
+      'SAVE', 'SAY', 'SCHOOL', 'SCIENCE', 'SCISSORS', 'SEARCH', 'SEAT', 'SECOND', 'SEE', 'SEEM', 'SELL', 'SEND', 'SENTENCE', 'SERVE',
+      'SEVEN', 'SEVERAL', 'SHADE', 'SHADOW', 'SHAKE', 'SHAPE', 'SHARE', 'SHARP', 'SHE', 'SHEEP', 'SHEET', 'SHELF', 'SHINE', 'SHIP',
+      'SHIRT', 'SHOE', 'SHOOT', 'SHOP', 'SHORT', 'SHOULD', 'SHOULDER', 'SHOUT', 'SHOW', 'SICK', 'SIDE', 'SIGNAL', 'SILENCE', 'SILLY',
+      'SILVER', 'SIMILAR', 'SIMPLE', 'SINGLE', 'SINCE', 'SING', 'TABLE', 'TAKE', 'TALK', 'TALL', 'TASTE', 'TAXI', 'TEA', 'TEACH',
+      'TEAR', 'TELEPHONE', 'TELEVISION', 'TELL', 'TEN', 'TENNIS', 'TERRIBLE', 'TEST', 'THAN', 'THAT', 'THE', 'THEIR', 'THEN', 'THERE',
+      'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'UP', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY',
+      'VOICE', 'VISIT', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WASTE', 'WATCH', 'WATER', 'WAY', 'WE', 'WEAK', 'WEAR',
+      'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL',
+      'YET', 'YOU', 'YOUNG', 'YOUR', 'ZERO', 'ZOO', "SHIVAM", "MANASVI", "NIKHIL", "HIMANSHU", "RATAN", "ANSHIKA", 'FILE', 'RAISE']
