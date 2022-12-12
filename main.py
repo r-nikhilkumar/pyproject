@@ -2,91 +2,48 @@
 import random
 from tkinter import *
 from PIL import ImageTk, Image
-# last commit
 
+# declaring word list:
+import os
+ 
+#location of file
+location=os.getcwd()
+location=os.getcwd()+"\words\words.txt"
 
-easy=['ABLE', 'ACID', 'ACT', 'AGE', 'AIM', 'LONG', 'ALSO', 'ANY', 'AREA', 'ART', 'AKS', 'AUTO', 'AWAY', 'BABY', 'BACK', 'BAD', 'BAG',
-      'BAKE', 'BAN', 'BAND', 'BANK', 'BASE', 'BEAR', 'BEAT', 'BEST', 'BIKE', 'BIND', 'BIRD', 'BOAT', 'BODY', 'BOOK', 'BUSY', 'CAKE', 
-      'CAR', 'CARD', 'CAT', 'CHIP', 'CITY', 'DOOR', 'DATE', 'DEER', 'DESK', 'DEEP', 'DUCK', 'DIP', 'DAB', 'DEN', 'DAD', 'DENT', 'DOCK',
-      'DOG', 'DARK', 'DUST', 'DOWN', 'EGG', 'EXIT', 'END', 'ECHO', 'EAT', 'EACH', 'EASY', 'EAR', 'EAST', 'EVEN', 'FALL', 'FROG', 'FARM',
-      'FORK', 'FEET', 'FAN', 'FEED', 'FELL', 'FEAR', 'FAR', 'FACE', 'FAST', 'FAT', 'FIX', 'FIRE', 'GATE', 'GEM', 'GAME', 'GOD', 'GUN',
-      'GAS', 'GAP', 'GIVE', 'GUM', 'GYM', 'GOAT', 'GOAT', 'HIT', 'HOT', 'HAT', 'HUMP', 'HUNT', 'HOME', 'HIS', 'HAD', 'HOPE', 'HEAL',
-      'HEAT', 'HILL', 'HINT', 'HOP', 'HIP', 'HEEL', 'HEN', 'ICE', 'IDEA', 'INTO', 'IRON', 'IS', 'ITEM', 'JAIL', 'JOKE', 'JUNE', 'JULY',
-      'JOLL', 'JUST', 'KID', 'KEY', 'KIND', 'KNIT', 'KIWI', 'KICK', 'KING', 'KICK', 'KNOT', 'KNEE', 'KITE', 'KEEL', 'KNEW', 'KEEP',
-      'KNOW', 'LADY', 'LAMP', 'LAND', 'LAST', 'LATE', 'LAZY', 'LEAD', 'LEAF', 'LEG', 'LEFT', 'LEND', 'LESS', 'LET', 'LIE', 'LIFE',
-      'LIKE', 'LION', 'LIP', 'LIST', 'LIVE', 'LOCK', 'LONG', 'LOOK', 'LOSE', 'LOT', 'LOVE', 'LOW', 'LUCK', 'MAIN', 'MAKE', 'MALE',
-      'MAN', 'MANY', 'MAP', 'MARK', 'MAY', 'ME', 'MEAL', 'MEAN', 'MEAT', 'MEET', 'MILK', 'NAME', 'NEAR', 'NECK', 'NEED', 'NET', 'NEW',
-      'NEWS', 'NEXT', 'NICE', 'OBEY', 'OIL', 'OLD', 'ONE', 'ONLY', 'OPEN', 'OR', 'OUR', 'OUT', 'OVER', 'OWN', 'PAGE', 'PAIN', 'PAIR',
-      'PAN', 'PARK', 'PART', 'PASS', 'PAST', 'PATH', 'PAY', 'PEN', 'PER', 'PICK', 'PIG', 'PIN', 'PINK', 'PLAY', 'POOL', 'POOR', 'RAIN',
-      'READ', 'REAL', 'RENT', 'REST', 'SAD', 'SAFE', 'SAIL', 'SALT', 'SAME', 'SAVE', 'SAY', 'SEAT', 'SEE', 'SEEM', 'SELL', 'SEND', 'SHE',
-      'SHIP', 'SHOE', 'SHOP', 'SHOW', 'SICK', 'SIDE', 'SING', 'TAKE', 'TALK', 'TALL', 'TAXI', 'TEA', 'TEAR', 'TELL', 'TEN', 'TEST',
-      'THAN', 'THAT', 'THE', 'THEN', 'UGLY', 'UNIT', 'UP', 'USE', 'VERY', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WAY',
-      'WE', 'WEAK', 'WEAR', 'WEEK', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'YARD', 'YELL', 'YET', 'YOU', 'YOUR', 'ZERO', 'ZOO']
-
-
-
-
-medium=['APPLE', 'ABUSE', 'ABOUT', 'ABOVE', 'ACCESS', 'ACROSS', 'ACTOR', 'ACTUAL', 'ADAPT', 'ADJUST', 'ADMIT', 'ADOPT', 'AFTER',
-        'AFFORD', 'AGAIN', 'AGENT', 'AGREE', 'AHEAD', 'ALIVE', 'ALLOW', 'ALMOST', 'ALONE', 'ALWAYS', 'AMONG', 'AMOUNT', 'ANGLE',
-        'ANIMAL', 'ANSWER', 'APART', 'APPEAL', 'APPEAR', 'APPLY', 'ARGUE', 'ARISE', 'AROUND', 'ARREST', 'ATTACK', 'AVOID', 'AWARD',
-        'AWARE', 'BASIC', 'BASKET', 'BATTLE', 'BEACH', 'BEFORE', 'BEGIN', 'BEHIND', 'BELIEF', 'BELONG', 'BELOW', 'BIRTH', 'BLACK',
-        'BLAME', 'BLIND', 'BLOCK', 'BOARD', 'BORDER', 'BORROW', 'BOTHER', 'BOTTLE', 'BOTTOM', 'BRAIN', 'BREATH', 'BUDGET', 'BUILD',
-        'BULLET', 'BUTTON', 'BUTTER', 'CABIN', 'CABLE', 'CAMERA', 'CAMPUS', 'CANCER', 'CARBON', 'CARRER', 'CARRY', 'CATCH', 'CAUSE',
-        'CENTER', 'CHAIN', 'CHAIR', 'CHANGE', 'CHEAP', 'CHECK', 'CHILD', 'CIRCLE', 'CLAIM', 'DRINK', 'DONKEY', 'DANCE', 'ENTER',
-        'ENGINE', 'EMPTY', 'EAGLE', 'EMAIL', 'EQUAL', 'ERASE', 'FRIEND', 'FENCE', 'FIELD', 'FAMILY', 'GREAT', 'GOBBLE', 'GRAPES',
-        'GHOST', 'GREEN', 'GRASS', 'GUITAR', 'GLOVES', 'GLASS', 'HUNGER', 'HAMPER', 'HOUSE', 'INSIDE', 'INVENT', 'INVITE', 'ISLAND',
-        'JACKET', 'JEWEL', 'JINGLE', 'JOYFUL', 'JETLAG', 'JAGUAR', 'KOALA', 'KITTEN', 'KNIFE', 'KNIGHT', 'KENNEL', 'KNEAD', 'KEEPER',
-        'LADDER', 'LARGE', 'LATELY', 'LAUGH', 'LEARN', 'LEAVE', 'LENGTH', 'LESSON', 'LETTER', 'LIGHT', 'LISTEN', 'LITTLE', 'LONELY',
-        'LOWER', 'MARKET', 'MARRY', 'MATTER', 'MEMBER', 'METHOD', 'MIDDLE', 'NARROW', 'NATION', 'NATURE', 'NEARLY', 'NEEDLE', 'NEVER',
-        'NIGHT', 'OBJECT', 'OCEAN', 'OFFER', 'OFFICE', 'OFTEN', 'ORANGE', 'ORDER', 'OTHER', 'PAINT', 'PAPER', 'PARENT', 'PARTY',
-        'PEACE', 'PENCIL', 'PEOPLE', 'PEPPER', 'PERIOD', 'PERSON', 'PETROL', 'PIANO', 'PIECE', 'PLACE', 'PLANE', 'PLANT', 'PLATE',
-        'PLEASE', 'PLENTY', 'POCKET', 'POINT', 'POISON', 'POLICE', 'POLITE', 'QUEEN', 'QUICK', 'QUIET', 'QUITE', 'RADIO', 'RAINY',
-        'RAISE', 'REACH', 'READY', 'REALLY', 'RECORD', 'REMIND', 'REMOVE', 'REPAIR', 'REPEAT', 'REPLY', 'REPORT', 'SCHOOL', 'SEARCH',
-        'SECOND', 'SERVE', 'SEVEN', 'SHADE', 'SHADOW', 'SHAKE', 'SHAPE', 'SHARE', 'SHARP', 'SHEEP', 'SHEET', 'SHELF', 'SHINE', 'SHIRT',
-        'SHOOT', 'SHORT', 'SHOULD', 'SHOUT', 'SIGNAL', 'SILLY', 'SILVER', 'SIMPLE', 'SINGLE', 'SINCE', 'TABLE', 'TASTE', 'TEACH',
-        'TENNIS', 'THEIR', 'THERE', 'UNCLE', 'UNDER', 'UNTIL', 'USEFUL', 'USUAL', 'VOICE', 'VISIT', 'WASTE', 'WATCH', 'WATER',
-        'WEIGHT', 'WHEEL', 'XEROX', 'YOUNG', 'SHIVAM', 'NIKHIL', 'RATAN']
-
-
-
-
-hard=['ANTIENT', 'ABSENCE', 'ACCOUNT', 'ANALYZE', 'ARRANGE', 'BALANCE', 'BARRIER', 'BATTERY', 'BECAUSE', 'BENEFIT', 'BLANKET',
-      'BOYFRIEND', 'CALCULATE', 'CANDIDATE', 'CAPABILITY', 'CAPTAIN', 'CAREFUL', 'CEILING', 'CELEBRITY', 'CHALLENGE', 'CHAMBER',
-      'CHARITY', 'DINOSAUR', 'ELEPHANT', 'ENVELOPE', 'ELEVATOR', 'FEELING', 'GENERAL', 'GENERIC', 'GLACIER', 'HAMBURGER', 'HOPEFUL',
-      'IMPORTANT', 'INCREASE', 'INTRODUCE', 'JELLYBEAN', 'JUGGLING', 'JOURNEY', 'JACKPOT', 'JEWELRY', 'JELLYFISH', 'JUNCTION',
-      'KANGAROO', 'KEYBOARD', 'KITCHEN', 'KETCHUP', 'KNOWLEDGE', 'LIBRARY', 'MACHINE', 'MEASURE', 'MEDICINE', 'MENTION', 'MILLION',
-      'NEIGHBOUR', 'NEITHER', 'NEWSPAPER', 'OPPOSITE', 'OUTSIDE', 'PARTNER', 'PERFECT', 'PHOTOGRAPH', 'PICTURE', 'PLASTIC', 'PLEASED',
-      'POPULAR', 'POSITION', 'POSSIBLE', 'QUESTION', 'RECEIVE', 'REMEMBER', 'SCIENCE', 'SCISSORS', 'SENTENCE', 'SEVERAL', 'SHOULDER',
-      'SILENCE', 'SIMILAR', 'TELEPHONE', 'TELEVISION', 'TERRIBLE', 'UNDERSTAND', 'USUALLY', 'VEGETABLE', 'WEATHER', 'WEDDING',
-      'WELCOME', 'MANASVI', 'HIMANSHU', 'ANSHIKA']
-
+#opening file
+fo=open(location,'r')
+# print(fo.read())
+L=fo.read()
+# print(L)
+L.split(',')
+ls=eval(L)
 
 
 def choice():
-    x = random.choice(medium)
+    x = random.choice(ls)
     return x
 
 
 # def getWord():
+wrd = choice()
+
 
 def jumble(w):
     run = True
     word = ""
-    medium = list(w)
+    ls = list(w)
     word = word.join(random.sample(w, len(w)))
     return word
-
-
-wrd = choice()
 word = jumble(wrd)
-while word in medium:
-    word = jumble(wrd)
+# while word in ls:
+    # word = jumble(wrd)
 
 # initializing window:
 w = Tk()
 w.geometry("800x600")
 w.maxsize(800, 600)
-img = ImageTk.PhotoImage(Image.open('forest1.jpeg'))
+loc=os.getcwd()+"\forest.jpeg"
+img = ImageTk.PhotoImage(Image.open("forest1.jpeg"))
 
 
 # creating class for button 'HELP':
@@ -94,7 +51,7 @@ class hel:
     help = Frame(w, width=800, height=600)
     help.place(anchor='center', relx=0.5, rely=0.5)
     w.title('HELP')
-
+    # h.pack()
     # Create a Label Widget to display the text or Image
     label3 = Label(help, image=img)
 
@@ -107,6 +64,9 @@ class hel:
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
+    var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and them arranges letters at \nmarked positions int the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
+    h = Label(help, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
+    h.place(anchor='w',relx=0.10,rely=0.38)
 
     def homeToHelp():
         home.pack_forget()
@@ -148,7 +108,7 @@ class st:
         if inp.upper() in ls:
             txt = ' Guessed right! '
         else:
-            txt = 'Wrong Guess!'
+            txt = ' Wrong Guess! '
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
@@ -200,7 +160,6 @@ class st:
     txt1.place(anchor='center', relx=0.3, rely=0.35)
     i = 2
     # while i>0:
-    
     stText = Label(start, text=f' {word} ', font=(
         "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     stText.place(anchor='w', relx=0.45, rely=0.26)
@@ -209,13 +168,12 @@ class st:
     Submit = Button(start, text="SUBMIT", command=printInput)
     Submit.place(anchor='w', relx=0.45, rely=0.41)
     # wrd = choice()
-    # if wrd in medium:
+    # if wrd in ls:
     #     wrd = choice()
     # print(wrd)
     # i-=1
-    hint = Button(start, text="HINT❓")
+    hint = Button(start, text="HINT❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
-    hint.configure(command=hintt)
 
 
 # defining HOME frame {main}:
@@ -235,6 +193,8 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 startBut = Button(home, text="START!!", font="Helvetica,32",
                   command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
+title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
+title.place(anchor=CENTER,relx=0.5,rely=0.1)
 
 home.pack()
 i = True
