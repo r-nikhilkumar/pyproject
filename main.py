@@ -50,7 +50,7 @@ ls = ['APPLE', 'PHASE', 'ABLE', 'ANTIENT', 'ABUSE', 'ABOUT', 'ABOVE', 'ABSENCE',
       'UGLY', 'UNCLE', 'UNDER', 'UNDERSTAND', 'UNIT', 'UNTIL', 'UP', 'USE', 'USEFUL', 'USUAL', 'USUALLY', 'VEGETABLE', 'VERY',
       'VOICE', 'VISIT', 'WAIT', 'WAKE', 'WALK', 'WANT', 'WARM', 'WAS', 'WASH', 'WASTE', 'WATCH', 'WATER', 'WAY', 'WE', 'WEAK', 'WEAR',
       'WEATHER', 'WEDDING', 'WEEK', 'WEIGHT', 'WELCOME', 'WERE', 'WELL', 'WEST', 'WET', 'WHAT', 'WHEEL', 'XEROX', 'YARD', 'YELL',
-      'YET', 'YOU', 'YOUNG', 'YOUR', 'ZERO', 'ZOO', "SHIVAM", "MANASVI", "NIKHIL", "HIMANSHU", "RATAN", "ANSHIKA"]
+      'YET', 'YOU', 'YOUNG', 'YOUR', 'ZERO', 'ZOO', "SHIVAM", "MANASVI", "NIKHIL", "HIMANSHU", "RATAN", "ANSHIKA", 'FILE', 'RAISE']
 
 
 def choice():
@@ -84,7 +84,7 @@ class hel:
     help = Frame(w, width=800, height=600)
     help.place(anchor='center', relx=0.5, rely=0.5)
     w.title('HELP')
-
+    # h.pack()
     # Create a Label Widget to display the text or Image
     label3 = Label(help, image=img)
 
@@ -97,6 +97,9 @@ class hel:
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
+    var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and them arranges letters at \nmarked positions int the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
+    h = Label(help, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
+    h.place(anchor='w',relx=0.10,rely=0.38)
 
     def homeToHelp():
         home.pack_forget()
@@ -167,6 +170,10 @@ class st:
         home.pack_forget()
         st.start.pack()
 
+    # def refresh():
+    #     st.start.destroy()
+    #     st.start.pack()
+
     def hintt():
         hint = []
         y = random.randint(0, len(wrd)-1)
@@ -219,6 +226,8 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 startBut = Button(home, text="START!!", font="Helvetica,32",
                   command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
+title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
+title.place(anchor=CENTER,relx=0.5,rely=0.1)
 
 home.pack()
 i = True
