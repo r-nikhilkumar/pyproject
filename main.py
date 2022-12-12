@@ -25,7 +25,7 @@ def choice():
 
 
 # def getWord():
-wrd = choice()
+# wrd = choice()
 
 
 def jumble(w):
@@ -34,7 +34,7 @@ def jumble(w):
     ls = list(w)
     word = word.join(random.sample(w, len(w)))
     return word
-word = jumble(wrd)
+# word = jumble(wrd)
 # while word in ls:
     # word = jumble(wrd)
 
@@ -100,13 +100,19 @@ class ab:
 
 class st:
     # w.title('START')
-
+    wrd = choice()
+    word = jumble(wrd)
+    
+    
     def printInput():
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
 
         if inp.upper() in ls:
             txt = ' Guessed right! '
+            st.wrd = choice()
+            st.word = jumble(st.wrd)
+            st.stText.configure(text=f' {st.word} ')
         else:
             txt = ' Wrong Guess! '
         tx = Label(st.start, text=txt, font=(
@@ -143,10 +149,10 @@ class st:
 
     def hintt():
         hint = []
-        y = random.randint(0, len(wrd)-1)
+        y = random.randint(0, len(st.wrd)-1)
         hint.append("* "*(y))
-        hint.append(wrd[y])
-        hint.append(" *"*((len(wrd)-1)-y))
+        hint.append(st.wrd[y])
+        hint.append(" *"*((len(st.wrd)-1)-y))
         txt = "".join(hint)
         tx = Label(st.start, text=f' {txt} ', font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
@@ -158,7 +164,7 @@ class st:
     txt1 = Label(start, text='Enter your guess:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     txt1.place(anchor='center', relx=0.3, rely=0.35)
-    i = 2
+    # i = 2
     # while i>0:
     stText = Label(start, text=f' {word} ', font=(
         "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
