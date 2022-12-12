@@ -25,8 +25,6 @@ def choice():
 
 
 # def getWord():
-wrd = choice()
-
 
 def jumble(w):
     run = True
@@ -34,6 +32,9 @@ def jumble(w):
     ls = list(w)
     word = word.join(random.sample(w, len(w)))
     return word
+
+
+wrd = choice()
 word = jumble(wrd)
 # while word in ls:
     # word = jumble(wrd)
@@ -107,6 +108,12 @@ class st:
 
         if inp.upper() in ls:
             txt = ' Guessed right! '
+            wrd = choice()
+            word = jumble(wrd)
+            st.stText.configure(text=f' {word} ')
+            #st.tx.configure(text=st.hinT(word))
+            # st.hint.configure(command=st.hintt)
+            
         else:
             txt = ' Wrong Guess! '
         tx = Label(st.start, text=txt, font=(
@@ -141,16 +148,20 @@ class st:
     #     st.start.destroy()
     #     st.start.pack()
 
-    def hintt():
+    def hinT(wrd):
         hint = []
         y = random.randint(0, len(wrd)-1)
         hint.append("* "*(y))
         hint.append(wrd[y])
         hint.append(" *"*((len(wrd)-1)-y))
         txt = "".join(hint)
-        tx = Label(st.start, text=txt, font=(
-            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
-        tx.place(anchor='w', relx=0.607, rely=0.41)
+        return txt
+    tx = Label(start, font=(
+        "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
+    tx.place(anchor='w', relx=0.607, rely=0.41)
+    def hintt():
+        st.tx.configure(text=st.hinT(word))
+        
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -160,6 +171,7 @@ class st:
     txt1.place(anchor='center', relx=0.3, rely=0.35)
     i = 2
     # while i>0:
+    
     stText = Label(start, text=f' {word} ', font=(
         "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     stText.place(anchor='w', relx=0.45, rely=0.26)
@@ -172,8 +184,9 @@ class st:
     #     wrd = choice()
     # print(wrd)
     # i-=1
-    hint = Button(start, text="HINT❓", command=hintt)
+    hint = Button(start, text="HINT❓")
     hint.place(anchor='w', relx=0.53, rely=0.41)
+    hint.configure(command=hintt)
 
 
 # defining HOME frame {main}:
