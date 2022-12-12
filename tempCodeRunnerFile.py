@@ -1,1 +1,1 @@
-return word
+print(fo.read())
