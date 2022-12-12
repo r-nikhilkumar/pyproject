@@ -148,7 +148,7 @@ class st:
         hint.append(wrd[y])
         hint.append(" *"*((len(wrd)-1)-y))
         txt = "".join(hint)
-        tx = Label(st.start, text=txt, font=(
+        tx = Label(st.start, text=f' {txt} ', font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.607, rely=0.41)
         
