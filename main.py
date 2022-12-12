@@ -150,9 +150,9 @@ class st:
     def hintt():
         hint = []
         y = random.randint(0, len(st.wrd)-1)
-        hint.append("* "*(y))
-        hint.append(st.wrd[y])
-        hint.append(" *"*((len(st.wrd)-1)-y))
+        hint.append(" * "*(y))
+        hint.append(f" {st.wrd[y]} ")
+        hint.append(" * "*((len(st.wrd)-1)-y))
         txt = "".join(hint)
         tx = Label(st.start, text=f'   {txt}   ', font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
