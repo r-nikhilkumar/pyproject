@@ -1,5 +1,7 @@
 # Packages imported
 import random
+
+import time
 from tkinter import *
 from PIL import ImageTk, Image
 
@@ -107,18 +109,30 @@ class st:
     def printInput():
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
-
+        # tx = Label(st.start, text=txt, font=(
+        #     "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
+        # tx.place(anchor='w', relx=0.45, rely=0.48)
         if inp.upper() in ls:
             txt = ' Guessed right! '
             st.wrd = choice()
             st.word = jumble(st.wrd)
+            st.stText.deletecommand
             st.stText.configure(text=f' {st.word} ')
+            st.tx1.configure(text="")
+            # txt = ""
         else:
             txt = ' Wrong Guess! '
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
+        # if txt == ' Guessed right! ':
+        #     time.sleep(2)
+        #     st.stText.configure(text=f' {st.word} ')
+        #     st.tx1.configure(text="")
+        #     tx.configure(text="")
         st.inputtxt.delete('1.0', 'end')
+        
+        # tx.configure(text='')
 
     start = Frame(w, width=800, height=600)
     label4 = Label(start, image=img)
@@ -146,7 +160,10 @@ class st:
     # def refresh():
     #     st.start.destroy()
     #     st.start.pack()
-
+    # hint text:
+    tx1 = Label(start, font=(
+            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
+    tx1.place(anchor='w', relx=0.607, rely=0.41)
     def hintt():
         hint = []
         y = random.randint(0, len(st.wrd)-1)
@@ -154,9 +171,10 @@ class st:
         hint.append(f" {st.wrd[y]} ")
         hint.append(" * "*((len(st.wrd)-1)-y))
         txt = "".join(hint)
-        tx = Label(st.start, text=f'   {txt}   ', font=(
-            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
-        tx.place(anchor='w', relx=0.607, rely=0.41)
+        # tx = Label(st.start, font=(
+        #     "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
+        # tx.place(anchor='w', relx=0.607, rely=0.41)
+        st.tx1.configure(text=f" {txt} ")
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -173,6 +191,7 @@ class st:
     inputtxt.place(anchor='w', relx=0.45, rely=0.35)
     Submit = Button(start, text="SUBMIT", command=printInput)
     Submit.place(anchor='w', relx=0.45, rely=0.41)
+    # time.sleep(2)
     # wrd = choice()
     # if wrd in ls:
     #     wrd = choice()
