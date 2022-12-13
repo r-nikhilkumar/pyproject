@@ -118,7 +118,7 @@ class st:
             st.word = jumble(st.wrd)
             st.stText.deletecommand
             st.stText.configure(text=f' {st.word} ')
-            st.tx1.configure(text="")
+            #st.tx1.destroy()
             # txt = ""
         else:
             txt = ' Wrong Guess! '
