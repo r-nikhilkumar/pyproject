@@ -1,12 +1,10 @@
 # Packages imported
 import random
-
 import time
 from tkinter import *
 from PIL import ImageTk, Image
-
-# declaring word list:
 import os
+
  
 #location of file
 location=os.getcwd()
@@ -18,9 +16,10 @@ fo=open(location,'r')
 L=fo.read()
 # print(L)
 L.split(',')
+# declaring word list:
 ls=eval(L)
 
-
+# return random correct words form list:
 def choice():
     x = random.choice(ls)
     return x
@@ -29,7 +28,7 @@ def choice():
 # def getWord():
 # wrd = choice()
 
-
+# jumbles the above returned words
 def jumble(w):
     run = True
     word = ""
@@ -50,17 +49,19 @@ img = ImageTk.PhotoImage(Image.open("forest1.jpeg"))
 
 # creating class for button 'HELP':
 class hel:
+    # declaring a new frame(slide):
     help = Frame(w, width=800, height=600)
     help.place(anchor='center', relx=0.5, rely=0.5)
     w.title('HELP')
     # h.pack()
     # Create a Label Widget to display the text or Image
     label3 = Label(help, image=img)
-
+    
+    # method to move from help to home slide:
     def helpToHome():
         hel.help.pack_forget()
         home.pack()
-
+    # button to perform back function(helpToHome)
     aboutBack = Button(help, text="BACK",
                        font="Helvetica,32", command=helpToHome)
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
@@ -118,7 +119,7 @@ class st:
             st.word = jumble(st.wrd)
             st.stText.deletecommand
             st.stText.configure(text=f' {st.word} ')
-            #st.tx1.destroy()
+            st.tx1.configure(text="")
             # txt = ""
         else:
             txt = ' Wrong Guess! '
