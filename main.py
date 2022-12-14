@@ -4,8 +4,31 @@ import time
 from tkinter import *
 from PIL import ImageTk, Image
 import os
+from pygame import mixer
 
- 
+# djffk
+
+def click_sound():
+    mixer.init()
+    mixer.music.load("click.mp3")
+    mixer.music.play()
+def bgsound():
+#     mixer.init()
+#     mixer.music.load("sound.mp3")
+
+    def play_music():
+        mixer.init()
+        mixer.music.load("sound.mp3")
+        if button["text"] == "\U0001F507":
+            button["text"] = "\U0001F508"
+            button["bg"] = "green"
+            mixer.music.play()
+        else:
+            button["text"] = "\U0001F507"
+            button["bg"] = "orange"
+            mixer.music.pause()
+    button = Button(home, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
+    button.place(relx=0.92,rely=0.05)
 #location of file
 location=os.getcwd()
 location=os.getcwd()+"\words\words.txt"
@@ -61,6 +84,7 @@ class hel:
     def helpToHome():
         hel.help.pack_forget()
         home.pack()
+        click_sound()
     # button to perform back function(helpToHome)
     aboutBack = Button(help, text="BACK",
                        font="Helvetica,32", command=helpToHome)
@@ -74,6 +98,7 @@ class hel:
     def homeToHelp():
         home.pack_forget()
         hel.help.pack()
+        click_sound()
 
 # creating class for button 'ABOUT':
 
@@ -89,6 +114,7 @@ class ab:
     def aboutToHome():
         ab.about.pack_forget()
         home.pack()
+        click_sound()
 
     aboutBack = Button(about, text="BACK",
                        font="Helvetica,32", command=aboutToHome)
@@ -98,6 +124,7 @@ class ab:
     def homeToAbout():
         home.pack_forget()
         ab.about.pack()
+        click_sound()
 
 # creating class for button 'START':
 
@@ -121,8 +148,14 @@ class st:
             st.stText.configure(text=f' {st.word} ')
             st.tx1.configure(text="")
             # txt = ""
+            mixer.init()
+            mixer.music.load("correct.mp3")
+            mixer.music.play()
         else:
             txt = ' Wrong Guess! '
+            mixer.init()
+            mixer.music.load("wrong.mp3")
+            mixer.music.play()
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
@@ -132,6 +165,7 @@ class st:
         #     st.tx1.configure(text="")
         #     tx.configure(text="")
         st.inputtxt.delete('1.0', 'end')
+        
         
         # tx.configure(text='')
 
@@ -148,6 +182,7 @@ class st:
     def startToHome():
         st.start.pack_forget()
         home.pack()
+        click_sound()
 
     startBack = Button(start, text="BACK",
                        font="Helvetica,32", command=startToHome)
@@ -157,6 +192,7 @@ class st:
     def homeToStart():
         home.pack_forget()
         st.start.pack()
+        click_sound()
 
     # def refresh():
     #     st.start.destroy()
@@ -176,6 +212,9 @@ class st:
         #     "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
         # tx.place(anchor='w', relx=0.607, rely=0.41)
         st.tx1.configure(text=f" {txt} ")
+        mixer.init()
+        mixer.music.load("hint.mp3")
+        mixer.music.play()
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -210,6 +249,7 @@ w.title('Jumblee')
 # Create a Label Widget to display the text or Image
 label = Label(home, image=img)
 label.pack()
+bgsound()
 aboutBut = Button(home, text="ABOUT", font="Helvetica,32",
                   command=ab.homeToAbout)
 helpBut = Button(home, text="HELP", font="Helvetica,32",
@@ -221,6 +261,9 @@ startBut = Button(home, text="START!!", font="Helvetica,32",
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
 title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
+
+
+
 
 home.pack()
 i = True
