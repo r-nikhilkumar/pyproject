@@ -2,13 +2,20 @@
 import random
 from tkinter import *
 from PIL import ImageTk, Image
+from pygame import mixer
+
 
 # declaring word list:
 import os
+#function to play click sound:
+def click_sound():
+    mixer.init()
+    mixer.music.load("click.mp3")
+    mixer.music.play()
  
 #location of file
 location=os.getcwd()
-location=os.getcwd()+"\words\words.txt"
+location=os.getcwd()+"//words//words.txt"
 
 #opening file
 fo=open(location,'r')
@@ -17,17 +24,9 @@ L=fo.read()
 # print(L)
 L.split(',')
 ls=eval(L)
-
-
 def choice():
     x = random.choice(ls)
     return x
-
-
-# def getWord():
-# wrd = choice()
-
-
 def jumble(w):
     run = True
     word = ""
@@ -58,9 +57,9 @@ class hel:
     def helpToHome():
         hel.help.pack_forget()
         home.pack()
+        click_sound()
 
-    aboutBack = Button(help, text="BACK",
-                       font="Helvetica,32", command=helpToHome)
+    aboutBack = Button(help, text="BACK",font="Helvetica,32", command=helpToHome)
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
@@ -71,6 +70,7 @@ class hel:
     def homeToHelp():
         home.pack_forget()
         hel.help.pack()
+        click_sound()
 
 # creating class for button 'ABOUT':
 
@@ -86,6 +86,7 @@ class ab:
     def aboutToHome():
         ab.about.pack_forget()
         home.pack()
+        click_sound()
 
     aboutBack = Button(about, text="BACK",
                        font="Helvetica,32", command=aboutToHome)
@@ -95,6 +96,7 @@ class ab:
     def homeToAbout():
         home.pack_forget()
         ab.about.pack()
+        click_sound()
 
 # creating class for button 'START':
 
@@ -113,8 +115,14 @@ class st:
             st.wrd = choice()
             st.word = jumble(st.wrd)
             st.stText.configure(text=f' {st.word} ')
+            mixer.init()
+            mixer.music.load("correct.mp3")
+            mixer.music.play()
         else:
             txt = ' Wrong Guess! '
+            mixer.init()
+            mixer.music.load("wrong.mp3")
+            mixer.music.play()
         tx = Label(st.start, text=txt, font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
@@ -133,6 +141,7 @@ class st:
     def startToHome():
         st.start.pack_forget()
         home.pack()
+        click_sound()
 
     startBack = Button(start, text="BACK",
                        font="Helvetica,32", command=startToHome)
@@ -142,6 +151,7 @@ class st:
     def homeToStart():
         home.pack_forget()
         st.start.pack()
+        click_sound()
 
     # def refresh():
     #     st.start.destroy()
@@ -157,6 +167,9 @@ class st:
         tx = Label(st.start, text=f'   {txt}   ', font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.607, rely=0.41)
+        mixer.init()
+        mixer.music.load("hint.mp3")
+        mixer.music.play()
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -196,19 +209,53 @@ helpBut = Button(home, text="HELP", font="Helvetica,32",
                  command=hel.homeToHelp)
 aboutBut.place(relx=0.5, rely=0.6, anchor=CENTER)
 helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
-startBut = Button(home, text="START!!", font="Helvetica,32",
-                  command=st.homeToStart)
+
+
+startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
 title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
-loginF = Frame(w,height=600,width=800)
+
+#for background sound:
+
+def play_music():
+    mixer.init()
+    mixer.music.load("sound.mp3")
+    if button["text"] == "\U0001F507":
+        button["text"] = "\U0001F508"
+        button["bg"] = "green"
+        mixer.music.play()
+    else:
+        button["text"] = "\U0001F507"
+        button["bg"] = "orange"
+        mixer.music.pause()
+
+button = Button(home, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
+button.place(relx=0.92,rely=0.05)
+
+loginF = Frame(w, width=800, height=600)
+l_label=Label(loginF, image=img)
+l_label.place(relx=0,rely=0)
+# method to make loginButton Functional:
 def log():
+    click_sound()
     loginF.pack_forget()
     home.pack()
-loginB = Button(loginF,text="LOGIN",command=log)
+    fName = EnterFName.get(1.0, "end-1c")
+    lName = EnterLName.get(1.0, "end-1c")
+    showname = Label(home, text=f"Welcome,\n{fName} {lName}",font=('bold',16))
+    showname.place(relx=0.5,rely=0.33,anchor='c')
 
-loginB.place(relx=0.5,rely=0.5,anchor='c')
-# loginB.pack()
+
+EnterFName = Text(loginF, height=1,width=9,font=('bold',18))
+EnterLName = Text(loginF, height=1,width=9,font=('bold',18))
+EnterFName.place(anchor='c',relx= 0.5,rely=0.3)
+EnterLName.place(anchor='c',relx= 0.5,rely=0.37)
+loginButton = Button(loginF, text="Login", command=log)
+loginButton.place(relx=0.5,rely=0.5,anchor=CENTER)
+    
+
+
 # home.pack()
 loginF.pack()
 i = True
