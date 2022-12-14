@@ -201,8 +201,16 @@ startBut = Button(home, text="START!!", font="Helvetica,32",
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
 title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
+loginF = Frame(w,height=600,width=800)
+def log():
+    loginF.pack_forget()
+    home.pack()
+loginB = Button(loginF,text="LOGIN",command=log)
 
-home.pack()
+loginB.place(relx=0.5,rely=0.5,anchor='c')
+# loginB.pack()
+# home.pack()
+loginF.pack()
 i = True
 while i:
     st.homeToStart()
