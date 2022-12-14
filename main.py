@@ -230,7 +230,7 @@ def play_music():
         button["bg"] = "orange"
         mixer.music.pause()
 
-button = Button(home, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
+button = Button(w, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
 button.place(relx=0.92,rely=0.05)
 
 loginF = Frame(w, width=800, height=600)
