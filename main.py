@@ -137,8 +137,8 @@ class st:
     wrd = choice()
     word = jumble(wrd)
     hintNo = 0
-    
-    
+    score = 0
+    hintRed = 0
     def printInput():
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
@@ -153,6 +153,9 @@ class st:
             mixer.music.play()
             st.hintNo = 0
             st.txh.configure(text="")
+            st.score+=10+st.hintRed
+            st.hintRed=0
+            st.scL.configure(text=f'SCORE: {st.score}')
         else:
             txt = ' Wrong Guess! '
             mixer.init()
@@ -172,7 +175,9 @@ class st:
 
     # Create a Label Widget to display the text or Image
     label4 = Label(start, image=img)
-
+    scL = Label(start, text=f'SCORE: {score}', font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
+    scL.place(anchor='c',relx=0.8,rely=0.1)
     def startToHome():
         st.start.pack_forget()
         home.pack()
@@ -210,6 +215,7 @@ class st:
         if st.hintNo<3:
             st.txh.configure(text=f" {txt} ")
             st.hintNo+=1
+            st.hintRed-=2
         else:
             st.txh.configure(text="You can't use hint anymore!")
         
