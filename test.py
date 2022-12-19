@@ -2,9 +2,9 @@ import tkinter as tk
 from PIL import Image, ImageTk
 run = tk.Tk()
 
-def go():
-    # frame1.pack_forget()
-    frame2.pack()
+# def go():
+#     frame1.pack_forget()
+#     frame2.pack()
 
 # # while run:
 #     #     while True:
@@ -28,15 +28,13 @@ frame1 = tk.Frame(run, width=400, height=400)
 # lab.place(anchor=tk.CENTER, relx=0.5,rely=0.5)
 # lab1t = tk.Label(frame1, text="its frame 1")
 # lab1t.place(anchor=tk.CENTER,relx=0.5,rely=0.6)
-but = tk.Button(frame1, text="goto2",command=go)
-but.place(relx=0.5,rely=0.7,anchor=tk.CENTER)
+# but = tk.Button(frame1, text="goto2",command=go)
+# but.place(relx=0.5,rely=0.7,anchor=tk.CENTER)
 
 # lab.pack()
 # lab1t.pack()
 # but.pack()
-frame2 = tk.Frame(run, width=400, height=400)
-txt = tk.Label(frame2,text="frame2")
-txt.pack()
+# frame2 = tk.Frame(run, width=400, height=400)
 # lab2 = tk.Label(frame2, image=img)
 # lab2.place(anchor=tk.CENTER,relx=0.5,rely=0.5)
 # lab2t = tk.Label(frame2, text="its frame 2")
@@ -44,17 +42,16 @@ txt.pack()
 # lab2.pack()
 # lab2t.pack()
 
-# def set():
-    # lebel.configure(text=clicked.get())
-# clicked = tk.StringVar()
-# level = tk.OptionMenu(frame1,clicked,'EASY','MEDIUM','HARD',command=set)
-# level = tk.OptionMenu()
+def set():
+    lebel.configure(text=clicked.get())
+clicked = tk.StringVar()
+level = tk.OptionMenu(frame1,clicked,'EASY','MEDIUM','HARD',command=set)
+level = tk.OptionMenu()
 # clicked = level.getvar()
-# lebel = tk.Label(frame1, text=clicked.get())
-# level.pack()
-# lebel.pack()
+lebel = tk.Label(frame1, text=clicked.get())
+level.pack()
+lebel.pack()
 frame1.pack()
-# frame1.pa
 
 
 
