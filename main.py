@@ -102,7 +102,6 @@ class ab:
 # creating class for button 'START':
 
 
-
 def quit():
     click_sound
     st.start.pack_forget()
@@ -115,7 +114,11 @@ def quit():
     label.pack()
     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
     scrT.place(anchor='c',relx=0.5,rely=0.15)
+    
     cName=EnterFName.get(1.0, "end-1c")
+    if '\n' in cName:
+        x = cName.split('\n')
+    cName = "".join(x)
     yourScore = Label(scr, text=f"Congratulations! {cName},\nYour Score is {st.score}", font=(
             "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00")
     yourScore.place(relx=0.5, rely=0.42,anchor='c')
@@ -134,9 +137,11 @@ class st:
     hintRed = 0
     def printInput(event):
         inp = st.inputtxt.get(1.0, "end-1c")
-        # Label.config(text =inp)
+
         if '\n' in inp:
-            inp=inp.removeprefix('\n')
+            x = inp.split('\n')
+            inp = "".join(x)
+        
         if inp.upper() in ls:
             txt = ' Guessed right! '
             st.wrd = choice()
@@ -162,9 +167,11 @@ class st:
     
     def printInputSub(event):
         inp = st.inputtxt.get(1.0, "end-1c")
+
         if '\n' in inp:
-            inp=inp.removeprefix('\n')
-        # Label.config(text =inp)
+            x = inp.split('\n')
+            inp = "".join(x)
+            
         if inp.upper() in ls:
             txt = ' Guessed right! '
             st.wrd = choice()
@@ -179,7 +186,7 @@ class st:
             st.hintRed=0
             st.scL.configure(text=f'SCORE: {st.score}')
         else:
-            txt = f' Wrong Guess! '
+            txt = ' Wrong Guess! '
             mixer.init()
             mixer.music.load("wrong.mp3")
             mixer.music.play()
@@ -306,6 +313,7 @@ def play_music():
 
 button = Button(w, text="\U0001F507",font=("Arial",15,"bold"), width=2, bg='green', fg='black', command=play_music)
 button.place(relx=0.92,rely=0.05)
+
 
 loginF = Frame(w, width=800, height=600)
 l_label=Label(loginF, image=img)
