@@ -111,29 +111,25 @@ class ab:
 
 
 def quit():
-        st.start.pack_forget()
-        scr = Frame(w, width=800, height=600)
-        # w.maxsize()
-        # scr.pack()
-        # Create a Label Widget to display the text or Image
-        label = Label(scr, image = img)
-        var_text="SCOREBOARD"
-        scr.place(anchor='center', relx=0.5, rely=0.5)
-        w.title('scoreboard')
-        label.place(anchor=CENTER,relx=0.5,rely=0.5)
-        label.pack()
-        scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
-        scrT.place(anchor='c',relx=0.5,rely=0.15)
-        # scrT.pack()
-    
-        scr.pack()
+    st.start.pack_forget()
+    scr = Frame(w, width=800, height=600)
+    label = Label(scr, image = img)
+    var_text="SCOREBOARD"
+    scr.place(anchor='center', relx=0.5, rely=0.5)
+    w.title('scoreboard')
+    label.place(anchor=CENTER,relx=0.5,rely=0.5)
+    label.pack()
+    scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+    scrT.place(anchor='c',relx=0.5,rely=0.15)
+    # scrT.pack()
+
+    scr.pack()
 
 
 
 
 
 class st:
-    # w.title('START')
     wrd = choice()
     word = jumble(wrd)
     hintNo = 0
@@ -142,7 +138,6 @@ class st:
     def printInput():
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
-
         if inp.upper() in ls:
             txt = ' Guessed right! '
             st.wrd = choice()
@@ -174,7 +169,6 @@ class st:
     # start.wm_attributes('-transparentcolor', '#ab23ff')
 
     # Create a Label Widget to display the text or Image
-    label4 = Label(start, image=img)
     scL = Label(start, text=f'SCORE: {score}', font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
     scL.place(anchor='c',relx=0.8,rely=0.1)
@@ -225,8 +219,7 @@ class st:
     txt1 = Label(start, text='Enter your guess:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     txt1.place(anchor='center', relx=0.3, rely=0.35)
-    # i = 2
-    # while i>0:
+   
     stText = Label(start, text=f' {word} ', font=(
         "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
     stText.place(anchor='w', relx=0.45, rely=0.26)
@@ -236,11 +229,7 @@ class st:
     Submit.place(anchor='w', relx=0.45, rely=0.41)
     goToSc = Button(start, text="QUIT", command=quit)
     goToSc.place(anchor='c', relx=0.5, rely=0.65)
-    # wrd = choice()
-    # if wrd in ls:
-    #     wrd = choice()
-    # print(wrd)
-    # i-=1
+    
     hint = Button(start, text="HINT❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
@@ -297,14 +286,12 @@ def log():
     loginF.pack_forget()
     home.pack()
     fName = EnterFName.get(1.0, "end-1c")
-    # lName = EnterLName.get(1.0, "end-1c")
     showname = Label(home, text=f"Welcome,\n{fName}",font=('bold',16))
     showname.place(relx=0.5,rely=0.33,anchor='c')
 
 
 EnterFName = Text(loginF, height=1,width=9,font=('bold',20))
 EnterName = Label(loginF, text="Enter Your Name:",font=("Helvetica",20,"bold"),bg="yellow")
-# w.wm_attributes('-transparentcolor', 'yellow')
 EnterFName.place(anchor='c',relx= 0.61,rely=0.37)
 EnterName.place(anchor='c',relx= 0.35,rely=0.37)
 loginButton = Button(loginF, text="Login", command=log)
