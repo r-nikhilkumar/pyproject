@@ -105,25 +105,6 @@ class ab:
         click_sound()
 
 
-# creating scoreboard screen:
-
-# class score:
-#     scr = Frame(w, width=800, height=600)
-#     # w.maxsize()
-#     # scr.pack()
-#     var_text="SCOREBOARD"
-#     scr.place(anchor='center', relx=0.5, rely=0.5)
-#     w.title('scoreboard')
-#     img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
-#     # Create a Label Widget to display the text or Image
-#     label = Label(scr, image = img)
-#     label.place(anchor=CENTER,relx=0.5,rely=0.5)
-#     # label.pack()
-#     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
-#     scrT.place(anchor='c',relx=0.5,rely=0.15)
-#     # scrT.pack()
-
-
 
 # creating class for button 'START':
 
@@ -155,6 +136,7 @@ class st:
     # w.title('START')
     wrd = choice()
     word = jumble(wrd)
+    hintNo = 0
     
     
     def printInput():
@@ -169,6 +151,8 @@ class st:
             mixer.init()
             mixer.music.load("correct.mp3")
             mixer.music.play()
+            st.hintNo = 0
+            st.txh.configure(text="")
         else:
             txt = ' Wrong Guess! '
             mixer.init()
@@ -208,7 +192,10 @@ class st:
     #     st.start.destroy()
     #     st.start.pack()
     
-
+    txh = Label(start, font=(
+            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
+    txh.place(anchor='w', relx=0.607, rely=0.41)
+    
     def hintt():
         hint = []
         y = random.randint(0, len(st.wrd)-1)
@@ -216,12 +203,15 @@ class st:
         hint.append(st.wrd[y])
         hint.append(" *"*((len(st.wrd)-1)-y))
         txt = "".join(hint)
-        tx = Label(st.start, text=f'   {txt}   ', font=(
-            "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
-        tx.place(anchor='w', relx=0.607, rely=0.41)
+        
         mixer.init()
         mixer.music.load("hint.mp3")
         mixer.music.play()
+        if st.hintNo<3:
+            st.txh.configure(text=f" {txt} ")
+            st.hintNo+=1
+        else:
+            st.txh.configure(text="You can't use hint anymore!")
         
     jum = Label(start, text='The Jumbled Word is:', font=(
         "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00", padx=1, pady=0)
@@ -249,41 +239,7 @@ class st:
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
     
-    # scr = Frame(w, width=800, height=600)
-    # # w.maxsize()
-    # # scr.pack()
-    # var_text="SCOREBOARD"
-    # scr.place(anchor='center', relx=0.5, rely=0.5)
-    # w.title('scoreboard')
-    # img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
-    # # Create a Label Widget to display the text or Image
-    # label = Label(scr, image = img)
-    # label.place(anchor=CENTER,relx=0.5,rely=0.5)
-    # # label.pack()
-    # scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
-    # scrT.place(anchor='c',relx=0.5,rely=0.15)
-    # # scrT.pack()
     
-    # def quit():
-    #     st.start.pack_forget()
-    #     scr = Frame(w, width=800, height=600)
-    #     # w.maxsize()
-    #     # scr.pack()
-    #     var_text="SCOREBOARD"
-    #     scr.place(anchor='center', relx=0.5, rely=0.5)
-    #     w.title('scoreboard')
-    #     img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
-    #     # Create a Label Widget to display the text or Image
-    #     label = Label(scr, image = img)
-    #     label.place(anchor=CENTER,relx=0.5,rely=0.5)
-    #     # label.pack()
-    #     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
-    #     scrT.place(anchor='c',relx=0.5,rely=0.15)
-    #     # scrT.pack()
-    
-    #     st.scr.pack()
-
-
 
 # defining HOME frame {main}:
 
