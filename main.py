@@ -32,10 +32,10 @@ def jumble(w):
     word = ""
     ls = list(w)
     word = word.join(random.sample(w, len(w)))
+    if word == w:
+        return jumble(w)
     return word
-# word = jumble(wrd)
-# while word in ls:
-    # word = jumble(wrd)
+
 
 # initializing window:
 w = Tk()
@@ -265,8 +265,9 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
-title = Label(home, text="JUMBLEE",font=("Helvetica",16,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
+title = Label(home, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
+
 
 #for background sound:
 
@@ -288,6 +289,8 @@ button.place(relx=0.92,rely=0.05)
 loginF = Frame(w, width=800, height=600)
 l_label=Label(loginF, image=img)
 l_label.place(relx=0,rely=0)
+title = Label(loginF, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
+title.place(anchor=CENTER,relx=0.5,rely=0.1)
 # method to make loginButton Functional:
 def log():
     click_sound()
