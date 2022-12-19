@@ -213,7 +213,7 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
-title = Label(home, text="JUMBLEE",font=("Helvetica",34,"bold"),bg="green",fg="black",padx=1,pady=0)
+title = Label(home, text="JUMBLEE",font=("Helvetica",16,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
 
 #for background sound:
@@ -242,15 +242,16 @@ def log():
     loginF.pack_forget()
     home.pack()
     fName = EnterFName.get(1.0, "end-1c")
-    lName = EnterLName.get(1.0, "end-1c")
-    showname = Label(home, text=f"Welcome,\n{fName} {lName}",font=('bold',16))
+    # lName = EnterLName.get(1.0, "end-1c")
+    showname = Label(home, text=f"Welcome,\n{fName}",font=('bold',16))
     showname.place(relx=0.5,rely=0.33,anchor='c')
 
 
 EnterFName = Text(loginF, height=1,width=9,font=('bold',18))
-EnterLName = Text(loginF, height=1,width=9,font=('bold',18))
-EnterFName.place(anchor='c',relx= 0.5,rely=0.3)
-EnterLName.place(anchor='c',relx= 0.5,rely=0.37)
+EnterName = Label(loginF, text="Enter Your Name:",font=("Helvetica",20,"bold"),bg="yellow")
+w.wm_attributes('-transparentcolor', 'yellow')
+EnterFName.place(anchor='c',relx= 0.61,rely=0.37)
+EnterName.place(anchor='c',relx= 0.35,rely=0.37)
 loginButton = Button(loginF, text="Login", command=log)
 loginButton.place(relx=0.5,rely=0.5,anchor=CENTER)
     
