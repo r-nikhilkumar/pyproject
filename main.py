@@ -135,6 +135,8 @@ class st:
     def printInput(event):
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
+        if '\n' in inp:
+            inp=inp.removeprefix('\n')
         if inp.upper() in ls:
             txt = ' Guessed right! '
             st.wrd = choice()
@@ -154,6 +156,34 @@ class st:
             mixer.music.load("wrong.mp3")
             mixer.music.play()
         tx = Label(st.start, text=txt, font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
+        tx.place(anchor='w', relx=0.45, rely=0.48)
+        st.inputtxt.delete('1.0', 'end')
+    
+    def printInputSub(event):
+        inp = st.inputtxt.get(1.0, "end-1c")
+        if '\n' in inp:
+            inp=inp.removeprefix('\n')
+        # Label.config(text =inp)
+        if inp.upper() in ls:
+            txt = ' Guessed right! '
+            st.wrd = choice()
+            st.word = jumble(st.wrd)
+            st.stText.configure(text=f' {st.word} ')
+            mixer.init()
+            mixer.music.load("correct.mp3")
+            mixer.music.play()
+            st.hintNo = 0
+            st.txh.configure(text="")
+            st.score+=10+st.hintRed
+            st.hintRed=0
+            st.scL.configure(text=f'SCORE: {st.score}')
+        else:
+            txt = f' Wrong Guess! '
+            mixer.init()
+            mixer.music.load("wrong.mp3")
+            mixer.music.play()
+        tx = Label(st.start, text=f'{txt}', font=(
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
         st.inputtxt.delete('1.0', 'end')
@@ -218,7 +248,7 @@ class st:
     stText.place(anchor='w', relx=0.45, rely=0.26)
     inputtxt = Text(start, height=1, width=16)
     inputtxt.place(anchor='w', relx=0.45, rely=0.35)
-    Submit = Button(start, text="SUBMIT",command=lambda:st.printInput('e'))
+    Submit = Button(start, text="SUBMIT",command=lambda:st.printInputSub('e'))
     Submit.place(anchor='w', relx=0.45, rely=0.41)
     
     goToSc = Button(start, text="QUIT", command=quit)
