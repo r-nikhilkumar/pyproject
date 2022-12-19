@@ -93,6 +93,12 @@ class ab:
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
     label3.pack()
 
+    
+    var_text="Libraries:-Tkinter,Pillow,\nPygame(mixer:-sound)\nDevelopers:-\nShivam Kumar Pathak,Nikhil Kumar,\nHimanshu Bisht, Ratan Priyanshu,\nAnshika Saxena,Manasvi Gaur"
+    a = Label(about, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
+    a.place(anchor='c',relx=0.5,rely=0.38)
+    
+    
     def homeToAbout():
         home.pack_forget()
         ab.about.pack()
@@ -101,25 +107,49 @@ class ab:
 
 # creating scoreboard screen:
 
-class score:
-    scr = Frame(w, width=800, height=600)
-    # w.maxsize()
-    # scr.pack()
-    var_text="SCOREBOARD"
-    scr.place(anchor='center', relx=0.5, rely=0.5)
-    w.title('scoreboard')
-    img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
-    # Create a Label Widget to display the text or Image
-    label = Label(scr, image = img)
-
-    label.pack()
-    scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
-    scrT.place(anchor='c',relx=0.5,rely=0.15)
-    # scrT.pack()
+# class score:
+#     scr = Frame(w, width=800, height=600)
+#     # w.maxsize()
+#     # scr.pack()
+#     var_text="SCOREBOARD"
+#     scr.place(anchor='center', relx=0.5, rely=0.5)
+#     w.title('scoreboard')
+#     img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
+#     # Create a Label Widget to display the text or Image
+#     label = Label(scr, image = img)
+#     label.place(anchor=CENTER,relx=0.5,rely=0.5)
+#     # label.pack()
+#     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+#     scrT.place(anchor='c',relx=0.5,rely=0.15)
+#     # scrT.pack()
 
 
 
 # creating class for button 'START':
+
+
+
+def quit():
+        st.start.pack_forget()
+        scr = Frame(w, width=800, height=600)
+        # w.maxsize()
+        # scr.pack()
+        # Create a Label Widget to display the text or Image
+        label = Label(scr, image = img)
+        var_text="SCOREBOARD"
+        scr.place(anchor='center', relx=0.5, rely=0.5)
+        w.title('scoreboard')
+        label.place(anchor=CENTER,relx=0.5,rely=0.5)
+        label.pack()
+        scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+        scrT.place(anchor='c',relx=0.5,rely=0.15)
+        # scrT.pack()
+    
+        scr.pack()
+
+
+
+
 
 class st:
     # w.title('START')
@@ -177,9 +207,7 @@ class st:
     # def refresh():
     #     st.start.destroy()
     #     st.start.pack()
-    def quit():
-        st.start.pack_forget()
-        score.scr.pack()
+    
 
     def hintt():
         hint = []
@@ -220,6 +248,40 @@ class st:
     hint = Button(start, text="HINT❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
 
+    
+    # scr = Frame(w, width=800, height=600)
+    # # w.maxsize()
+    # # scr.pack()
+    # var_text="SCOREBOARD"
+    # scr.place(anchor='center', relx=0.5, rely=0.5)
+    # w.title('scoreboard')
+    # img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
+    # # Create a Label Widget to display the text or Image
+    # label = Label(scr, image = img)
+    # label.place(anchor=CENTER,relx=0.5,rely=0.5)
+    # # label.pack()
+    # scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+    # scrT.place(anchor='c',relx=0.5,rely=0.15)
+    # # scrT.pack()
+    
+    # def quit():
+    #     st.start.pack_forget()
+    #     scr = Frame(w, width=800, height=600)
+    #     # w.maxsize()
+    #     # scr.pack()
+    #     var_text="SCOREBOARD"
+    #     scr.place(anchor='center', relx=0.5, rely=0.5)
+    #     w.title('scoreboard')
+    #     img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
+    #     # Create a Label Widget to display the text or Image
+    #     label = Label(scr, image = img)
+    #     label.place(anchor=CENTER,relx=0.5,rely=0.5)
+    #     # label.pack()
+    #     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+    #     scrT.place(anchor='c',relx=0.5,rely=0.15)
+    #     # scrT.pack()
+    
+    #     st.scr.pack()
 
 
 
