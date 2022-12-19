@@ -32,13 +32,16 @@ def jumble(w):
     word = ""
     ls = list(w)
     word = word.join(random.sample(w, len(w)))
+    if word == w:
+        return jumble(w)
     return word
+
 
 # initializing window:
 w = Tk()
 w.geometry("800x600")
 w.maxsize(800, 600)
-loc=os.getcwd()+"\forest1.jpeg"
+loc=os.getcwd()+"\forest.jpeg"
 img = ImageTk.PhotoImage(Image.open("forest1.jpeg"))
 
 
@@ -56,11 +59,11 @@ class hel:
         home.pack()
         click_sound()
 
-    helpBack = Button(help, text="BACK",font="Helvetica,32", command=helpToHome)
-    helpBack.place(relx=0.5, rely=0.8, anchor=CENTER)
+    aboutBack = Button(help, text="BACK",font="Helvetica,32", command=helpToHome)
+    aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
-    var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and then arranges letters at \nmarked positions in the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
+    var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and them arranges letters at \nmarked positions int the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
     h = Label(help, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
     h.place(anchor='w',relx=0.10,rely=0.38)
 
@@ -91,7 +94,7 @@ class ab:
     label3.pack()
 
     
-    var_text="Libraries:-Tkinter,Pillow,\nPygame(mixer:-sound),os,random\nDevelopers:-\nShivam Kumar Pathak,Nikhil Kumar,\nHimanshu Bisht, Ratan Priyanshu,\nAnshika Saxena,Manasvi Gaur"
+    var_text="Libraries:-Tkinter,Pillow,\nPygame(mixer:-sound)\nDevelopers:-\nShivam Kumar Pathak,Nikhil Kumar,\nHimanshu Bisht, Ratan Priyanshu,\nAnshika Saxena,Manasvi Gaur"
     a = Label(about, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
     a.place(anchor='c',relx=0.5,rely=0.38)
     
@@ -134,8 +137,8 @@ class st:
     wrd = choice()
     word = jumble(wrd)
     hintNo = 0
-    
-    
+    score = 0
+    hintRed = 0
     def printInput():
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
@@ -150,6 +153,9 @@ class st:
             mixer.music.play()
             st.hintNo = 0
             st.txh.configure(text="")
+            st.score+=10+st.hintRed
+            st.hintRed=0
+            st.scL.configure(text=f'SCORE: {st.score}')
         else:
             txt = ' Wrong Guess! '
             mixer.init()
@@ -169,7 +175,9 @@ class st:
 
     # Create a Label Widget to display the text or Image
     label4 = Label(start, image=img)
-
+    scL = Label(start, text=f'SCORE: {score}', font=(
+            "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
+    scL.place(anchor='c',relx=0.8,rely=0.1)
     def startToHome():
         st.start.pack_forget()
         home.pack()
@@ -207,6 +215,7 @@ class st:
         if st.hintNo<3:
             st.txh.configure(text=f" {txt} ")
             st.hintNo+=1
+            st.hintRed-=2
         else:
             st.txh.configure(text="You can't use hint anymore!")
         
@@ -256,8 +265,9 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
-title = Label(home, text="JUMBLEE",font=("Helvetica",16,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
+title = Label(home, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
+
 
 #for background sound:
 
@@ -279,6 +289,8 @@ button.place(relx=0.92,rely=0.05)
 loginF = Frame(w, width=800, height=600)
 l_label=Label(loginF, image=img)
 l_label.place(relx=0,rely=0)
+title = Label(loginF, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
+title.place(anchor=CENTER,relx=0.5,rely=0.1)
 # method to make loginButton Functional:
 def log():
     click_sound()
