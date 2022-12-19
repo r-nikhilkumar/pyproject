@@ -59,8 +59,8 @@ class hel:
         home.pack()
         click_sound()
 
-    aboutBack = Button(help, text="BACK",font="Helvetica,32", command=helpToHome)
-    aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
+    helpBack = Button(help, text="BACK",font="Helvetica,32", command=helpToHome)
+    helpBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
     var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and them arranges letters at \nmarked positions int the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
