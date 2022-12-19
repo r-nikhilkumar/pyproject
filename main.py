@@ -179,10 +179,6 @@ class st:
         home.pack_forget()
         st.start.pack()
         click_sound()
-
-    # def refresh():
-    #     st.start.destroy()
-    #     st.start.pack()
     
     txh = Label(start, font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
@@ -250,8 +246,6 @@ startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToSta
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
 # BINDING ENTER KEY:
 st.start.bind('<Return>',st.printInput)
-
-
 
 
 title = Label(home, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
