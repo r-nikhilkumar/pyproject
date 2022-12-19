@@ -102,6 +102,27 @@ class ab:
         ab.about.pack()
         click_sound()
 
+
+# creating scoreboard screen:
+
+class score:
+    scr = Frame(w, width=800, height=600)
+    # w.maxsize()
+    # scr.pack()
+    var_text="SCOREBOARD"
+    scr.place(anchor='center', relx=0.5, rely=0.5)
+    w.title('scoreboard')
+    img = ImageTk.PhotoImage(Image.open('forest1.jpeg')) #this is to be edited later
+    # Create a Label Widget to display the text or Image
+    label = Label(scr, image = img)
+
+    label.pack()
+    scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
+    scrT.place(anchor='c',relx=0.5,rely=0.15)
+    # scrT.pack()
+
+
+
 # creating class for button 'START':
 
 class st:
@@ -160,6 +181,9 @@ class st:
     # def refresh():
     #     st.start.destroy()
     #     st.start.pack()
+    def quit():
+        st.start.pack_forget()
+        score.scr.pack()
 
     def hintt():
         hint = []
@@ -190,6 +214,8 @@ class st:
     inputtxt.place(anchor='w', relx=0.45, rely=0.35)
     Submit = Button(start, text="SUBMIT", command=printInput)
     Submit.place(anchor='w', relx=0.45, rely=0.41)
+    goToSc = Button(start, text="QUIT", command=quit)
+    goToSc.place(anchor='c', relx=0.5, rely=0.65)
     # wrd = choice()
     # if wrd in ls:
     #     wrd = choice()
@@ -197,6 +223,8 @@ class st:
     # i-=1
     hint = Button(start, text="HINT❓", command=hintt)
     hint.place(anchor='w', relx=0.53, rely=0.41)
+
+
 
 
 # defining HOME frame {main}:
