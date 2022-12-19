@@ -52,7 +52,8 @@ class hel:
     w.title('HELP')
     # h.pack()
     # Create a Label Widget to display the text or Image
-    label3 = Label(help, image=img)
+    imgHelp = ImageTk.PhotoImage(Image.open("helpImg.jpeg"))
+    label3 = Label(help, image=imgHelp)
 
     def helpToHome():
         hel.help.pack_forget()
@@ -63,10 +64,7 @@ class hel:
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
 
     label3.pack()
-    var_text="JUMBLEE is a word puzzle with a clue \nand a set of words ,each of which \nis a 'Jumbled' by scramblings its letters. A Solver reconstructs \nthe words, and them arranges letters at \nmarked positions int the words too \nspell the answer phrase to the clue. The clue and \nsometimes the illustration, provide \nhints about the answer phrase."
-    h = Label(help, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
-    h.place(anchor='w',relx=0.10,rely=0.38)
-
+    
     def homeToHelp():
         home.pack_forget()
         hel.help.pack()
@@ -81,7 +79,8 @@ class ab:
     w.title('ABOUT')
 
     # Create a Label Widget to display the text or Image
-    label3 = Label(about, image=img)
+    imgAb = ImageTk.PhotoImage(Image.open("aboutImg.jpeg"))
+    label3 = Label(about, image=imgAb)
 
     def aboutToHome():
         ab.about.pack_forget()
@@ -92,12 +91,6 @@ class ab:
                        font="Helvetica,32", command=aboutToHome)
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
     label3.pack()
-
-    
-    var_text="Libraries:-Tkinter,Pillow,\nPygame(mixer:-sound)\nDevelopers:-\nShivam Kumar Pathak,Nikhil Kumar,\nHimanshu Bisht, Ratan Priyanshu,\nAnshika Saxena,Manasvi Gaur"
-    a = Label(about, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
-    a.place(anchor='c',relx=0.5,rely=0.38)
-    
     
     def homeToAbout():
         home.pack_forget()
@@ -234,6 +227,7 @@ class st:
     inputtxt.place(anchor='w', relx=0.45, rely=0.35)
     Submit = Button(start, text="SUBMIT", command=printInput)
     Submit.place(anchor='w', relx=0.45, rely=0.41)
+    
     goToSc = Button(start, text="QUIT", command=quit)
     goToSc.place(anchor='c', relx=0.5, rely=0.65)
     # wrd = choice()
@@ -265,6 +259,12 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
+# BINDING ENTER KEY:
+st.start.bind('<Return>',st.printInput)
+
+
+
+
 title = Label(home, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
 
