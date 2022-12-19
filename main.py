@@ -92,10 +92,6 @@ class ab:
                        font="Helvetica,32", command=aboutToHome)
     aboutBack.place(relx=0.5, rely=0.8, anchor=CENTER)
     label3.pack()
-    var_text="Libraries:-Tkinter,Pillow,\nPygame(mixer:-sound)\nDevelopers:-\nShivam Kumar Pathak,Nikhil Kumar,\nHimanshu Bisht, Ratan Priyanshu,\nAnshika Saxena,Manasvi Gaur"
-    a = Label(about, text=var_text,font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black",padx=0.45,pady=0.45)
-    a.place(anchor='c',relx=0.5,rely=0.38)
-
 
     def homeToAbout():
         home.pack_forget()
