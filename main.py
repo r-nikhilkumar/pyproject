@@ -104,6 +104,7 @@ class ab:
 
 
 def quit():
+    click_sound
     st.start.pack_forget()
     scr = Frame(w, width=800, height=600)
     label = Label(scr, image = img)
@@ -114,7 +115,10 @@ def quit():
     label.pack()
     scrT = Label(scr,text=var_text,font=("Helvetica",10,"bold"),bg="#ffe066",fg="Black",padx=1,pady=0)
     scrT.place(anchor='c',relx=0.5,rely=0.15)
-    # scrT.pack()
+    cName=EnterFName.get(1.0, "end-1c")
+    yourScore = Label(scr, text=f"Congratulations! {cName},\nYour Score is {st.score}", font=(
+            "Helvetica", 25, "bold"), bg="#ffe066", fg="#004d00")
+    yourScore.place(relx=0.5, rely=0.42,anchor='c')
 
     scr.pack()
 
@@ -128,7 +132,7 @@ class st:
     hintNo = 0
     score = 0
     hintRed = 0
-    def printInput():
+    def printInput(event):
         inp = st.inputtxt.get(1.0, "end-1c")
         # Label.config(text =inp)
         if inp.upper() in ls:
@@ -153,7 +157,7 @@ class st:
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
         st.inputtxt.delete('1.0', 'end')
-
+    
     start = Frame(w, width=800, height=600)
     label4 = Label(start, image=img)
     label4.pack()
@@ -214,7 +218,7 @@ class st:
     stText.place(anchor='w', relx=0.45, rely=0.26)
     inputtxt = Text(start, height=1, width=16)
     inputtxt.place(anchor='w', relx=0.45, rely=0.35)
-    Submit = Button(start, text="SUBMIT", command=printInput)
+    Submit = Button(start, text="SUBMIT",command=lambda:st.printInput('e'))
     Submit.place(anchor='w', relx=0.45, rely=0.41)
     
     goToSc = Button(start, text="QUIT", command=quit)
@@ -244,8 +248,12 @@ helpBut.place(relx=0.5, rely=0.7, anchor=CENTER)
 
 startBut = Button(home, text="START!!", font="Helvetica,32",command=st.homeToStart)
 startBut.place(relx=0.5, rely=0.5, anchor=CENTER)
+
 # BINDING ENTER KEY:
-st.start.bind('<Return>',st.printInput)
+
+st.inputtxt.bind('<Return>',st.printInput)
+
+
 
 
 title = Label(home, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
@@ -275,7 +283,7 @@ l_label.place(relx=0,rely=0)
 title = Label(loginF, text="JUMBLEE",font=("Helvetica",25,"bold"),bg="#ffe066", fg="#004d00",padx=1,pady=0)
 title.place(anchor=CENTER,relx=0.5,rely=0.1)
 # method to make loginButton Functional:
-def log():
+def log(event):
     click_sound()
     loginF.pack_forget()
     home.pack()
@@ -288,12 +296,11 @@ EnterFName = Text(loginF, height=1,width=9,font=('bold',20))
 EnterName = Label(loginF, text="Enter Your Name:",font=("Helvetica",20,"bold"),bg="yellow")
 EnterFName.place(anchor='c',relx= 0.61,rely=0.37)
 EnterName.place(anchor='c',relx= 0.35,rely=0.37)
-loginButton = Button(loginF, text="Login", command=log)
+loginButton = Button(loginF, text="Login", command=lambda:log('e'))
 loginButton.place(relx=0.5,rely=0.5,anchor=CENTER)
-    
+EnterFName.bind('<Return>',log)
 
 
-# home.pack()
 loginF.pack()
 i = True
 while i:
