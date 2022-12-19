@@ -247,9 +247,9 @@ def log():
     showname.place(relx=0.5,rely=0.33,anchor='c')
 
 
-EnterFName = Text(loginF, height=1,width=9,font=('bold',18))
+EnterFName = Text(loginF, height=1,width=9,font=('bold',20))
 EnterName = Label(loginF, text="Enter Your Name:",font=("Helvetica",20,"bold"),bg="yellow")
-w.wm_attributes('-transparentcolor', 'yellow')
+# w.wm_attributes('-transparentcolor', 'yellow')
 EnterFName.place(anchor='c',relx= 0.61,rely=0.37)
 EnterName.place(anchor='c',relx= 0.35,rely=0.37)
 loginButton = Button(loginF, text="Login", command=log)
