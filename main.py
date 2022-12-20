@@ -1,12 +1,32 @@
 # Packages imported
 import random
+import time
 from tkinter import *
 from PIL import ImageTk, Image
 from pygame import mixer
+import threading
+import os
+
+# timer:
+
+def countdown():
+    st.subTap = False
+    time_left = 25
+    # st.check = True
+    tm = Label(st.start, font=("Helvetica",15,"bold"),bg="#ffe066",fg="Black")
+    tm.place(relx=0.8,rely=0.3, anchor='c')
+    while time_left:
+        tm.configure(text=f"\n        00:{time_left}       \n")
+        time.sleep(1)
+        time_left-=1
+        if st.subTap==True:
+            break
+    if not(st.subTap):
+        tm.configure(text="TIME-UP‼️")
+        # st.X = TRUE
 
 
 # declaring word list:
-import os
 #function to play click sound:
 def click_sound():
     mixer.init()
@@ -24,6 +44,7 @@ L=fo.read()
 # print(L)
 L.split(',')
 ls=eval(L)
+# ls=["hii","hellos"]
 def choice():
     x = random.choice(ls)
     return x
@@ -135,6 +156,8 @@ class st:
     hintNo = 0
     score = 0
     hintRed = 0
+    subTap = False
+    X = False
     def printInput(event):
         inp = st.inputtxt.get(1.0, "end-1c")
 
@@ -152,9 +175,17 @@ class st:
             mixer.music.play()
             st.hintNo = 0
             st.txh.configure(text="")
-            st.score+=10+st.hintRed
+            if st.X:
+                st.score+=0
+                
+            else:
+                st.score+=10+st.hintRed
             st.hintRed=0
             st.scL.configure(text=f'SCORE: {st.score}')
+            st.subTap = True
+            st.X = False
+            countdown_thread = threading.Thread(target=countdown)
+            countdown_thread.start()
         else:
             txt = ' Wrong Guess! '
             mixer.init()
@@ -164,7 +195,7 @@ class st:
             "Helvetica", 15, "bold"), bg="#ffe066", fg="#004d00")
         tx.place(anchor='w', relx=0.45, rely=0.48)
         st.inputtxt.delete('1.0', 'end')
-    
+    check = True
     def printInputSub(event):
         inp = st.inputtxt.get(1.0, "end-1c")
 
@@ -182,9 +213,19 @@ class st:
             mixer.music.play()
             st.hintNo = 0
             st.txh.configure(text="")
-            st.score+=10+st.hintRed
+            if st.X:
+                st.score+=0
+            else:
+                st.score+=10+st.hintRed
+                
             st.hintRed=0
             st.scL.configure(text=f'SCORE: {st.score}')
+            
+            st.subTap = True
+            st.X = False
+            countdown_thread = threading.Thread(target=countdown)
+            countdown_thread.start()
+            
         else:
             txt = ' Wrong Guess! '
             mixer.init()
@@ -220,6 +261,8 @@ class st:
         home.pack_forget()
         st.start.pack()
         click_sound()
+        countdown_thread = threading.Thread(target=countdown)
+        countdown_thread.start()
     
     txh = Label(start, font=(
             "Helvetica", 12, "bold"), bg="#ffe066", fg="#004d00")
